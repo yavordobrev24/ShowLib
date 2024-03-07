@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 3em;
+}
+header .logo {
+  font-size: 2em;
+  font-weight: bolder;
+}
+header nav ul {
+  display: flex;
+  gap: 1em;
+}
+header nav ul li a {
+  text-align: center;
+}
+
+header nav ul li a .mat-icon {
+  font-size: 1.5em;
+  width: 3em;
+}
