@@ -1,1 +1,13 @@
-<p>tv-shows-list works!</p>
+<section class="tv-shows-list">
+  <p>Most popular - TV Shows</p>
+  <ul>
+    <li
+      *ngFor="let tvShow of tvShows"
+      (click)="details($event)"
+      id="{{ tvShow.name }}"
+    >
+      <img [src]="tvShow.imgUrl" alt="{{ tvShow.name }}" />
+      <p>{{ tvShow.name }}</p>
+    </li>
+  </ul>
+</section>

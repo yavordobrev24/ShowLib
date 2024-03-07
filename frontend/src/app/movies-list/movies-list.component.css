@@ -1,0 +1,26 @@
+.movies-list {
+  padding: 3em;
+}
+
+.movies-list > p {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+.movies-list ul {
+  display: flex;
+  gap: 1em;
+
+  flex-wrap: wrap;
+}
+.movies-list ul li {
+  width: 10em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.movies-list ul li img {
+  border-radius: 10px;
+}
+.movies-list ul li p {
+  padding: 1em;
+  text-align: center;
+}

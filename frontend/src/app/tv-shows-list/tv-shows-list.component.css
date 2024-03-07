@@ -1,0 +1,26 @@
+.tv-shows-list {
+  padding: 3em;
+}
+
+.tv-shows-list > p {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+.tv-shows-list ul {
+  display: flex;
+  gap: 1em;
+
+  flex-wrap: wrap;
+}
+.tv-shows-list ul li {
+  width: 10em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tv-shows-list ul li img {
+  border-radius: 10px;
+}
+.tv-shows-list ul li p {
+  padding: 1em;
+  text-align: center;
+}

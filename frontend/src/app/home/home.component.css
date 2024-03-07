@@ -1,0 +1,7 @@
+.home {
+  padding: 1em 5em;
+}
+
+.home > p {
+  font-size: 2em;
+}

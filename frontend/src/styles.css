@@ -7,7 +7,7 @@ html {
   font: 18px/1 sans-serif;
 }
 body {
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(90deg, #020e2d, #043d56);
   min-height: 100vh;
   color: white;
 }
@@ -22,7 +22,5 @@ img {
   width: 100%;
   height: auto;
   display: block;
+  border: inherit;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
