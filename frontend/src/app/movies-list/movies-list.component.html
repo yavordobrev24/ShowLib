@@ -1,13 +1,13 @@
-<section class="movies-list">
+<div class="movies-list">
   <p>Most popular - Movies</p>
   <ul>
     <li
       *ngFor="let movie of movies"
       (click)="details($event)"
-      id="{{ movie.name }}"
+      [routerLink]="['/movies', movie.name]"
     >
       <img [src]="movie.imgUrl" alt="{{ movie.name }}" />
       <p>{{ movie.name }}</p>
     </li>
   </ul>
-</section>
+</div>
