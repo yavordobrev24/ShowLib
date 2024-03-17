@@ -1,1 +1,12 @@
-<p>tv-shows works!</p>
+<div class="tv-shows">
+  <ul>
+    <li
+      *ngFor="let tvShow of tvShows"
+      (click)="details($event)"
+      [routerLink]="['/tv-shows', tvShow._id]"
+    >
+      <img [src]="tvShow.img" alt="{{ tvShow.title }}" />
+      <p>{{ tvShow.title }}</p>
+    </li>
+  </ul>
+</div>

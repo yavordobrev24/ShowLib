@@ -1,1 +1,12 @@
-<p>movies works!</p>
+<div class="movies">
+  <ul>
+    <li
+      *ngFor="let movie of movies"
+      (click)="details($event)"
+      [routerLink]="['/movies', movie._id]"
+    >
+      <img [src]="movie.img" alt="{{ movie.title }}" />
+      <p>{{ movie.title }}</p>
+    </li>
+  </ul>
+</div>

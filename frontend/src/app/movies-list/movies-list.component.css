@@ -19,6 +19,7 @@
 }
 .movies-list ul li img {
   border-radius: 10px;
+  height: 12em;
 }
 .movies-list ul li p {
   padding: 1em;

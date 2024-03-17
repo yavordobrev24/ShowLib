@@ -4,10 +4,10 @@
     <li
       *ngFor="let tvShow of tvShows"
       (click)="details($event)"
-      [routerLink]="['/tv-shows', tvShow.name]"
+      [routerLink]="['/tv-shows', tvShow._id]"
     >
-      <img [src]="tvShow.imgUrl" alt="{{ tvShow.name }}" />
-      <p>{{ tvShow.name }}</p>
+      <img [src]="tvShow.img" alt="{{ tvShow.title }}" />
+      <p>{{ tvShow.title }}</p>
     </li>
   </ul>
 </div>

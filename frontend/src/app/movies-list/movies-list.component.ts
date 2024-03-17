@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -7,10 +7,12 @@ import { ApiService } from '../api/api.service';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent implements OnInit {
-  movies: any = [];
+  movies: any;
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    this.movies = this.apiService.getMovies();
+    this.apiService.getMovies().subscribe((data: any) => {
+      this.movies = data;
+    });
   }
   details(e: any) {
     console.log(e.currentTarget);

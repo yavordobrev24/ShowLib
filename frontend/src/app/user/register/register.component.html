@@ -1,1 +1,22 @@
-<p>register works!</p>
+<div class="register">
+  <h2>Register</h2>
+  <form #registerForm="ngForm" (submit)="register(registerForm)">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput name="username" ngModel />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput name="email" ngModel />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput name="password" ngModel />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Repeat Password</mat-label>
+      <input matInput name="rePassword" ngModel />
+    </mat-form-field>
+    <button mat-button>Submit</button>
+  </form>
+</div>

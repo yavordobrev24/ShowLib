@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 html {
-  font: 18px/1 "Lucida Sans", sans-serif;
+  font: 18px/1 sans-serif;
 }
 body {
   background: linear-gradient(90deg, #020e2d, #043d56);
   min-height: 100vh;
-  color: white;
+  color: rgb(247, 230, 230);
 }
 ul {
   list-style-type: none;

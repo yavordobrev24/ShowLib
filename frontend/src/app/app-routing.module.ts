@@ -27,11 +27,11 @@ const routes: Routes = [
     component: TvShowsComponent,
   },
   {
-    path: 'movies/:name',
+    path: 'movies/:id',
     component: MovieDetailsComponent,
   },
   {
-    path: 'tv-shows/:name',
+    path: 'tv-shows/:id',
     component: TvShowDetailsComponent,
   },
   { path: '**', component: NotFoundComponent },

@@ -4,10 +4,10 @@
     <li
       *ngFor="let movie of movies"
       (click)="details($event)"
-      [routerLink]="['/movies', movie.name]"
+      [routerLink]="['/movies', movie._id]"
     >
-      <img [src]="movie.imgUrl" alt="{{ movie.name }}" />
-      <p>{{ movie.name }}</p>
+      <img [src]="movie.img" alt="{{ movie.title }}" />
+      <p>{{ movie.title }}</p>
     </li>
   </ul>
 </div>

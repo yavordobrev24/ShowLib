@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-tv-shows-list',
@@ -7,10 +7,13 @@ import { ApiService } from '../api/api.service';
   styleUrls: ['./tv-shows-list.component.css'],
 })
 export class TvShowsListComponent implements OnInit {
-  tvShows: any = [];
+  tvShows: any;
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    this.tvShows = this.apiService.getTVShows();
+    this.apiService.getTVShows().subscribe((data: any) => {
+      this.tvShows = data;
+      console.log(this.tvShows);
+    });
   }
   details(e: any) {
     console.log(e.currentTarget);

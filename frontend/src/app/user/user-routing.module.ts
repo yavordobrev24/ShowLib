@@ -4,23 +4,29 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LibraryComponent } from './library/library.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoggedActivate } from '../guards/logged.guard';
+import { NotLoggedActivate } from '../guards/notlogged.guard';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [NotLoggedActivate],
   },
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [NotLoggedActivate],
   },
   {
     path: 'library',
     component: LibraryComponent,
+    canActivate: [LoggedActivate],
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [LoggedActivate],
   },
 ];
 
