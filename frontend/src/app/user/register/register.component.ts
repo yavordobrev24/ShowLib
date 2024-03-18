@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/types/user';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent {
     if (password !== rePassword) {
       return;
     }
-    this.userService.register(username, email, password).subscribe((x) => {
+    this.userService.register(username, email, password).subscribe((x: any) => {
       this.userService.user = x;
       localStorage.setItem('user', JSON.stringify(x));
       this.router.navigate(['/home']);

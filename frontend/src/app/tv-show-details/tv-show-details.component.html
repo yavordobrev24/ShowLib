@@ -1,6 +1,16 @@
 <div class="tv-show-details">
-  <div class="tv-show-content"></div>
-  <img [src]="tvShow.img" alt="{{ tvShow.title }}" />
-  <h2>{{ tvShow.title }}</h2>
-  <p>{{ tvShow.description }}</p>
+  <div class="content">
+    <div class="img">
+      <img [src]="tvShow?.img" alt="{{ tvShow?.title }}" />
+    </div>
+    <div class="info">
+      <h2>{{ tvShow?.title }}</h2>
+      <p>{{ tvShow?.description }}</p>
+    </div>
+  </div>
+  <div class="comments">
+    <!-- <ul>
+      <li></li>
+    </ul> -->
+  </div>
 </div>

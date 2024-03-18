@@ -1,0 +1,27 @@
+.tv-shows {
+  padding: 3em 7em;
+}
+
+.tv-shows > h2 {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+.tv-shows ul {
+  display: flex;
+  gap: 4em;
+
+  flex-wrap: wrap;
+}
+.tv-shows ul li {
+  width: 10em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tv-shows ul li img {
+  border-radius: 10px;
+  height: 12em;
+}
+.tv-shows ul li p {
+  padding: 1em;
+  text-align: center;
+}

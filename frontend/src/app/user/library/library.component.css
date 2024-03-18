@@ -1,0 +1,27 @@
+.library {
+  padding: 3em 7em;
+}
+
+.library > h2 {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+.library ul {
+  display: flex;
+  gap: 4em;
+
+  flex-wrap: wrap;
+}
+.library ul li {
+  width: 10em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.library ul li img {
+  border-radius: 10px;
+  height: 12em;
+}
+.library ul li p {
+  padding: 1em;
+  text-align: center;
+}

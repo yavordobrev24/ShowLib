@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
-  user: object | undefined;
+  user: any | undefined;
   LS_KEY = 'user';
   get isLogged(): boolean {
     return !!this.user;
@@ -28,7 +28,7 @@ export class UserService {
   logout() {
     this.user = undefined;
     localStorage.removeItem(this.LS_KEY);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
     return this.http.get('/api/users/logout');
   }
 }

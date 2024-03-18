@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { TvShowsListComponent } from './tv-shows-list/tv-shows-list.component';
-import { DiscoverComponent } from './discover/discover.component';
+
 import { MoviesComponent } from './movies/movies.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import { UserRoutingModule } from './user/user-routing.module';
@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { appInterceptorProvider } from './app.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,6 @@ import { appInterceptorProvider } from './app.interceptor';
     NotFoundComponent,
     MoviesListComponent,
     TvShowsListComponent,
-    DiscoverComponent,
     MoviesComponent,
     TvShowsComponent,
     MovieDetailsComponent,
@@ -46,6 +46,7 @@ import { appInterceptorProvider } from './app.interceptor';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],

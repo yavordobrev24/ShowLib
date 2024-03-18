@@ -1431,13 +1431,7 @@
         email: "peter@abv.bg",
         username: "Peter",
         hashedPassword:
-          "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
-      },
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        email: "george@abv.bg",
-        username: "George",
-        hashedPassword:
-          "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+          "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1", //123456
       },
       "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
         email: "admin@abv.bg",
@@ -1452,8 +1446,9 @@
     comments: {
       "0a272c58-b7ea-4e09-a000-7ec988248f66": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        content: "Great recipe!",
-        movieId: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+        username: "Peter",
+        content: "Great movie!",
+        showId: "1240549d-f0e0-497e-ab99-eb8f703713d7",
         _createdOn: 1614260681375,
         _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
       },
@@ -1516,7 +1511,34 @@
         _id: "0b2f73ea-ebbf-40f9-a110-3ce26669c663",
       },
     },
-    libraries: {},
+
+    libraries: {
+      "654b13-11ee-b962-0242ac120002": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        savedMovies: [
+          {
+            _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+            title: "Top Gun 2",
+            description:
+              "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+            img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
+            _createdOn: 1614935268135,
+            _id: "0b2f73ea-ebbf-40f9-a110-3ce26669c663",
+          },
+        ],
+        savedTVShows: [
+          {
+            _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+            title: "Wonder Woman 1984",
+            description:
+              "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
+            img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
+            _createdOn: 1614935181470,
+            _id: "719155e0-0945-4230-9d8c-3c471e5a6837",
+          },
+        ],
+      },
+    },
   };
   var rules$1 = {
     users: {

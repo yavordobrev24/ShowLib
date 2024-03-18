@@ -1,1 +1,14 @@
-<p>library works!</p>
+<div class="library">
+  <h2>Library</h2>
+  <ul *ngIf="library?.saved.length > 0">
+    <li
+      *ngFor="let save of library?.saved"
+      [routerLink]="['/tv-shows', save._id]"
+    >
+      <img [src]="save.img" alt="{{ save.title }}" />
+      <p>{{ save.title }}</p>
+    </li>
+  </ul>
+
+  <p *ngIf="library?.saved.length === 0"></p>
+</div>
