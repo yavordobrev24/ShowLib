@@ -14,39 +14,60 @@ export class MovieDetailsComponent implements OnInit {
   comments: any;
   movieId: string | null = null;
   commentAdded: boolean | undefined;
-  userId: string | undefined | null;
+  userId: any;
+  hasSaved: any;
   commentToEdit: any;
+  isLogged: any;
+
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
     private userService: UserService
   ) {}
+
   ngOnInit(): void {
+    console.log('new init');
+    this.isLogged = this.userService.isLogged;
+
     this.route.params.subscribe((params) => {
       this.movieId = params['id'];
     });
+    if (this.isLogged) {
+      this.userId = this.userService.user._id;
+    }
     this.apiService
       .getMovie(this.movieId)
       .subscribe((data: any) => (this.movie = data));
+
     this.apiService.getComments().subscribe((x) => {
       this.comments = Object.values(x).filter((y) => y.showId === this.movieId);
-      console.log('Comments', this.comments);
-      this.userId = this.userService.user._id;
       if (
-        this.comments.find((x: any) => x._ownerId == this.userService.user._id)
+        this.comments?.find(
+          (x: any) => x._ownerId == this.userService.user?._id
+        )
       ) {
         this.commentAdded = true;
       } else {
         this.commentAdded = false;
       }
     });
+    const lsLib = localStorage.getItem('library');
+    const library = lsLib !== null ? JSON.parse(lsLib) : '';
+
+    if (library.savedMovies?.find((x: any) => this.movieId == x._id)) {
+      console.log('Has saved');
+
+      this.hasSaved = true;
+    } else {
+      this.hasSaved = false;
+    }
   }
+
   addComment(form: NgForm) {
     if (form.invalid) {
       return;
     }
     const { comment } = form.value;
-    console.log('hasComment', this.commentToEdit);
 
     if (!this.commentToEdit) {
       this.apiService
@@ -54,7 +75,6 @@ export class MovieDetailsComponent implements OnInit {
         .subscribe((x) => this.comments.push(x));
       this.commentAdded = true;
     } else {
-      console.log('Here', this.commentToEdit);
       this.commentToEdit.content = comment;
       this.comments.push(this.commentToEdit);
       this.apiService.editComment(this.commentToEdit).subscribe((x) => x);
@@ -62,24 +82,49 @@ export class MovieDetailsComponent implements OnInit {
       this.commentAdded = true;
     }
   }
+
   save() {
-    console.log('to save');
+    const lsLib = localStorage.getItem('library');
+    const library = lsLib !== null ? JSON.parse(lsLib) : '';
+    console.log(library);
+
+    library.savedMovies.push(this.movie);
+    localStorage.setItem('library', JSON.stringify(library));
+    this.apiService.saveToUserLibrary(library).subscribe((x) => console.log(x));
+
+    this.hasSaved = true;
   }
 
   editComment(id: string) {
     this.commentToEdit = this.comments.find((x: any) => x._id == id);
     this.comments = this.comments.filter((x: any) => x._id != id);
     this.commentAdded = false;
-    console.log(this.commentToEdit);
-
-    // this.apiService
-    //   .editComment(id, this.comment)
-    //   .subscribe((x) => console.log(x));
-    console.log(this.comments);
   }
+
   deleteComment(id: string) {
     this.comments = this.comments.filter((x: any) => x._id != id);
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
     this.commentAdded = false;
+  }
+  unsave() {
+    const lsLib = localStorage.getItem('library');
+    const library = lsLib !== null ? JSON.parse(lsLib) : '';
+    console.log(library);
+
+    const moviesToResave = library.savedMovies.filter(
+      (x: any) => x._id !== this.movieId
+    );
+    console.log(this.movieId);
+
+    console.log(moviesToResave);
+
+    const libraryToResave = library;
+    libraryToResave.savedMovies = moviesToResave;
+    localStorage.setItem('library', JSON.stringify(libraryToResave));
+    this.apiService
+      .removeFromUserLibrary(libraryToResave)
+      .subscribe((x) => console.log(x));
+
+    this.hasSaved = false;
   }
 }

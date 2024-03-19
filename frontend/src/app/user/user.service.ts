@@ -6,14 +6,16 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
-  user: any | undefined;
-  LS_KEY = 'user';
+  library: any;
+  user: any;
+  USER_KEY = 'user';
+  LIB_KEY = 'library';
   get isLogged(): boolean {
     return !!this.user;
   }
   constructor(private http: HttpClient, private router: Router) {
     try {
-      const lsUser = localStorage.getItem(this.LS_KEY) || '';
+      const lsUser = localStorage.getItem(this.USER_KEY) || '';
       this.user = JSON.parse(lsUser);
     } catch (error) {
       this.user = undefined;
@@ -27,7 +29,8 @@ export class UserService {
   }
   logout() {
     this.user = undefined;
-    localStorage.removeItem(this.LS_KEY);
+    localStorage.removeItem(this.USER_KEY);
+    localStorage.removeItem(this.LIB_KEY);
     this.router.navigate(['/login']);
     return this.http.get('/api/users/logout');
   }

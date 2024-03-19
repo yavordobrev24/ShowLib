@@ -15,7 +15,4 @@ export class TvShowsListComponent implements OnInit {
       console.log(this.tvShows);
     });
   }
-  details(e: any) {
-    console.log(e.currentTarget);
-  }
 }

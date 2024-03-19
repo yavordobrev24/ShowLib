@@ -1,14 +1,25 @@
 <div class="library">
   <h2>Library</h2>
-  <ul *ngIf="library?.saved.length > 0">
+  <h3>Saved Movies</h3>
+  <ul *ngIf="library?.savedMovies.length > 0">
     <li
-      *ngFor="let save of library?.saved"
-      [routerLink]="['/tv-shows', save._id]"
+      *ngFor="let movie of library?.savedMovies"
+      [routerLink]="['/movies', movie._id]"
     >
-      <img [src]="save.img" alt="{{ save.title }}" />
-      <p>{{ save.title }}</p>
+      <img [src]="movie.img" alt="{{ movie.title }}" />
+      <p>{{ movie.title }}</p>
     </li>
   </ul>
-
-  <p *ngIf="library?.saved.length === 0"></p>
+  <p *ngIf="library?.savedMovies.length === 0">No Movies saved.</p>
+  <h3>Saved TV Shows</h3>
+  <ul *ngIf="library?.savedTVShows.length > 0">
+    <li
+      *ngFor="let tvShow of library?.savedTVShows"
+      [routerLink]="['/tv-shows', tvShow._id]"
+    >
+      <img [src]="tvShow.img" alt="{{ tvShow.title }}" />
+      <p>{{ tvShow.title }}</p>
+    </li>
+  </ul>
+  <p *ngIf="library?.savedTVShows.length === 0">No TV Shows saved.</p>
 </div>

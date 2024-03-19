@@ -1,11 +1,7 @@
 <div class="movies-list">
   <p>Most popular - Movies</p>
   <ul>
-    <li
-      *ngFor="let movie of movies"
-      (click)="details($event)"
-      [routerLink]="['/movies', movie._id]"
-    >
+    <li *ngFor="let movie of movies" [routerLink]="['/movies', movie._id]">
       <img [src]="movie.img" alt="{{ movie.title }}" />
       <p>{{ movie.title }}</p>
     </li>

@@ -24,11 +24,52 @@ export class ApiService {
   getComments() {
     return this.http.get('/api/data/comments');
   }
-  getUserLibrary() {
-    return this.http.get('/api/data/libraries/');
+  getAllLibraries() {
+    return this.http.get('/api/data/libraries', {
+      headers: {
+        'X-Authorization': this.userService.user.accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
   }
-  saveToUserLibrary() {
-    return this.http.put('/api/data/libraries', {});
+  createLibrary() {
+    const data = {
+      savedTVShows: [],
+      savedMovies: [],
+    };
+    return this.http.post('/api/data/libraries', data, {
+      headers: {
+        'X-Authorization': this.userService.user.accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+  saveToUserLibrary(lib: any) {
+    const data = {
+      savedMovies: lib.savedMovies,
+      savedTVShows: lib.savedTVShows,
+      _ownerId: this.userService.user._id,
+    };
+    return this.http.put(`/api/data/libraries/${lib._id}`, data, {
+      headers: {
+        'X-Authorization': this.userService.user.accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+  removeFromUserLibrary(lib: any) {
+    const data = {
+      savedMovies: lib.savedMovies,
+      savedTVShows: lib.savedTVShows,
+      _ownerId: this.userService.user._id,
+    };
+
+    return this.http.put(`/api/data/libraries/${lib._id}`, data, {
+      headers: {
+        'X-Authorization': this.userService.user.accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
   }
   addComment(id: string | null, comment: string) {
     console.log(typeof comment);

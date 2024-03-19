@@ -14,7 +14,4 @@ export class MoviesListComponent implements OnInit {
       this.movies = data;
     });
   }
-  details(e: any) {
-    console.log(e.currentTarget);
-  }
 }

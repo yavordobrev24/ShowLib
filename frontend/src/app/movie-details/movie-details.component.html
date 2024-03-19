@@ -6,10 +6,16 @@
     <div class="info">
       <h2>{{ movie?.title }}</h2>
       <p>{{ movie?.description }}</p>
-      <button (click)="save()">Save</button>
+      <button *ngIf="hasSaved == false && isLogged" (click)="save()">
+        Save
+      </button>
+      <button *ngIf="hasSaved == true && isLogged" (click)="unsave()">
+        Unsave
+      </button>
+      <h3 *ngIf="hasSaved == true && isLogged">Saved</h3>
     </div>
   </div>
-  <div class="add-comment" *ngIf="commentAdded == false">
+  <div class="add-comment" *ngIf="commentAdded == false && isLogged">
     <form #commentForm="ngForm" (submit)="addComment(commentForm)">
       <h3>Add comment</h3>
       <textarea name="comment" ngModel></textarea>
