@@ -11,7 +11,7 @@ export class MoviesListComponent implements OnInit {
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
     this.apiService.getMovies().subscribe((data: any) => {
-      this.movies = data;
+      this.movies = data.slice(0, 5);
     });
   }
 }

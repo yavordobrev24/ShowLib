@@ -1448,32 +1448,41 @@
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         username: "Peter",
         content: "Great movie!",
-        showId: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+        showId: "1f4e66bd-19e7-4d89-b23e-314b549616ad",
         _createdOn: 1614260681375,
         _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
       },
     },
     movies: {
-      "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Black Widow",
+      "1f4e66bd-19e7-4d89-b23e-314b549616ad": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Joker",
         description:
-          "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-        img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-        _createdOn: 1614935055353,
-        _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+          "A psychological thriller following a failed comedian descending into insanity and becoming an iconic villain.",
+        img: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "1f4e66bd-19e7-4d89-b23e-314b549616ad",
       },
-      "143e5265-333e-4150-80e4-16b61de31aa0": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Wonder Woman 1984",
+      "90cef92d-374e-488e-827e-030e14b47524": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "The Northman",
         description:
-          "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-        img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-        _createdOn: 1614935181470,
-        _id: "143e5265-333e-4150-80e4-16b61de31aa0",
+          "A young Viking prince is on a quest to avenge his father's murder.",
+        img: "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "90cef92d-374e-488e-827e-030e14b47524",
+      },
+      "c778e298-fa3e-4e1f-9ddd-4dffa32212ef": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "American Psycho",
+        description:
+          "The film is a dark satire of yuppie culture and materialism in the 1980s. It is known for its graphic violence, disturbing imagery, and darkly comedic tone.",
+        img: "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "c778e298-fa3e-4e1f-9ddd-4dffa32212ef",
       },
       "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Top Gun 2",
         description:
           "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
@@ -1481,62 +1490,79 @@
         _createdOn: 1614935268135,
         _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
       },
-    },
-    tvShows: {
-      "f32723d6-a66b-471a-a7e0-343884172a16": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Black Widow",
-        description:
-          "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-        img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-        _createdOn: 1614935055353,
-        _id: "f32723d6-a66b-471a-a7e0-343884172a16",
-      },
       "719155e0-0945-4230-9d8c-3c471e5a6837": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Wonder Woman 1984",
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "The Gentlemen",
         description:
-          "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-        img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
+          "A powerful criminal kingpin in London wants to retire and sell his marijuana empire. Multiple interested parties emerge, leading to a web of betrayal, violence, and dark humor.",
+        img: "https://m.media-amazon.com/images/M/MV5BMTlkMmVmYjktYTc2NC00ZGZjLWEyOWUtMjc2MDMwMjQwOTA5XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_FMjpg_UX1000_.jpg",
         _createdOn: 1614935181470,
         _id: "719155e0-0945-4230-9d8c-3c471e5a6837",
       },
-      "0b2f73ea-ebbf-40f9-a110-3ce26669c663": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Top Gun 2",
+    },
+    tvShows: {
+      "f32723d6-a66b-471a-a7e0-343884172a16": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "The Walking Dead",
         description:
-          "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-        img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
+          "The Walking Dead follows a group of survivors in a world overrun by walkers (zombies). They face constant threats from both the walkers and other human groups who will do anything to survive. The story focuses on their struggle to stay alive, find a safe haven, and rebuild a semblance of society.",
+        img: "https://m.media-amazon.com/images/M/MV5BNzI5MjUyYTEtMTljZC00NGI5LWFhNWYtYjY0ZTQ5YmEzMWRjXkEyXkFqcGdeQXVyMTY3MDE5MDY1._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935055353,
+        _id: "f32723d6-a66b-471a-a7e0-343884172a16",
+      },
+
+      "0b2f73ea-ebbf-40f9-a110-3ce26669c663": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Shōgun",
+        description:
+          "Clavell's Shōgun is historical fiction. The character of Blackthorne is loosely based on the historical English navigator William Adams, who in Japan rose to become a samurai under a powerful daimyō.",
+        img: "https://m.media-amazon.com/images/M/MV5BMzhkNzVkNDYtNmE2Zi00ZTk1LTk2OWYtOTU5NWM5OWQ2Zjc0XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
         _createdOn: 1614935268135,
         _id: "0b2f73ea-ebbf-40f9-a110-3ce26669c663",
+      },
+      "12b0904f-4fe6-427d-ae72-988a648bb090": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Breaking Bad",
+        description:
+          "A high school chemistry teacher diagnosed with terminal cancer uses his knowledge to cook and sell crystal meth to ensure his family's financial security after his death.",
+        img: "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "12b0904f-4fe6-427d-ae72-988a648bb090",
+      },
+      "b2d0319f-f4c5-4baa-9695-e87a39c4eb25": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Planet Earth II",
+        description:
+          "This documentary series explores the diversity of life on Earth, showcasing the unique challenges faced by animals in different habitats.",
+        img: "https://m.media-amazon.com/images/M/MV5BMGZmYmQ5NGQtNWQ1MC00NWZlLTg0MjYtYjJjMzQ5ODgxYzRkXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935268135,
+        _id: "b2d0319f-f4c5-4baa-9695-e87a39c4eb25",
+      },
+      "a84e8381-0a62-44f6-9099-7612fe2a69da": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "The Mandalorian",
+        description:
+          "This space Western is set in the Star Wars universe and follows a bounty hunter who travels the outer reaches of the galaxy.",
+        img: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzU2YS00NzBlLTgwZWUtYWQzNWFhNDkyYjg3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "a84e8381-0a62-44f6-9099-7612fe2a69da",
+      },
+      "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Rick and Morty",
+        description:
+          "An adult animated science fiction sitcom about a mad scientist Rick Sanchez who involves his teenage grandson Morty Smith in dangerous adventures across the universe.",
+        img: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935268135,
+        _id: "ec139692-6686-4eb0-85bc-c2c92ee6d6dc",
       },
     },
 
     libraries: {
       "654b13-11ee-b962-0242ac120002": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        savedMovies: [
-          {
-            _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-            title: "Top Gun 2",
-            description:
-              "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-            img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-            _createdOn: 1614935268135,
-            _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
-          },
-        ],
-        savedTVShows: [
-          {
-            _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-            title: "Wonder Woman 1984",
-            description:
-              "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-            img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-            _createdOn: 1614935181470,
-            _id: "719155e0-0945-4230-9d8c-3c471e5a6837",
-          },
-        ],
+        savedMovies: [],
+        savedTVShows: [],
       },
     },
   };

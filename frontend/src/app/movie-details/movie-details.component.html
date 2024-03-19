@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="add-comment" *ngIf="commentAdded == false && isLogged">
-    <form #commentForm="ngForm" (submit)="addComment(commentForm)">
+    <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)">
       <h3>Add comment</h3>
       <textarea name="comment" ngModel></textarea>
       <button>Send Comment</button>

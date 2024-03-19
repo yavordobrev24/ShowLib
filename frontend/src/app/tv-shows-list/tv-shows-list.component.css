@@ -8,7 +8,7 @@
 }
 .tv-shows-list ul {
   display: flex;
-  gap: 1em;
+  gap: 3em;
 
   flex-wrap: wrap;
 }
@@ -17,7 +17,12 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.tv-shows-list ul li:hover img {
+  transform: scale(1.05);
+  border: 1px solid white;
+}
 .tv-shows-list ul li img {
+  transition: 0.3s;
   border-radius: 10px;
   height: 12em;
 }

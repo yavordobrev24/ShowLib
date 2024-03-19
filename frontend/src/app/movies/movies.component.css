@@ -12,12 +12,17 @@
 
   flex-wrap: wrap;
 }
+.movies ul li:hover img {
+  transform: scale(1.05);
+  border: 1px solid white;
+}
 .movies ul li {
   width: 10em;
   border-radius: 10px;
   cursor: pointer;
 }
 .movies ul li img {
+  transition: 0.3s;
   border-radius: 10px;
   height: 12em;
 }

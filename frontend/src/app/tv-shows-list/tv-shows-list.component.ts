@@ -11,7 +11,7 @@ export class TvShowsListComponent implements OnInit {
   constructor(private apiService: ApiService) {}
   ngOnInit(): void {
     this.apiService.getTVShows().subscribe((data: any) => {
-      this.tvShows = data;
+      this.tvShows = data.slice(0, 5);
       console.log(this.tvShows);
     });
   }

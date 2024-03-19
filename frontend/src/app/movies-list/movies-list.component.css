@@ -17,7 +17,12 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.movies-list ul li:hover img {
+  transform: scale(1.05);
+  border: 1px solid white;
+}
 .movies-list ul li img {
+  transition: 0.3s;
   border-radius: 10px;
   height: 12em;
 }
