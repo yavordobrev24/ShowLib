@@ -72,7 +72,7 @@ export class ApiService {
     });
   }
   addComment(id: string | null, comment: string) {
-    console.log(typeof comment);
+    console.log('API COMMENT ', comment);
 
     const data = {
       showId: id,

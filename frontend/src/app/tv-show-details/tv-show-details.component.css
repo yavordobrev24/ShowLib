@@ -1,19 +1,90 @@
+.tv-show-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
 .tv-show-details .content {
-  padding-inline: 6em;
+  padding: 2em 6em;
   width: 100%;
   gap: 2em;
   display: flex;
   justify-content: center;
 }
 .tv-show-details .content .img {
-  flex: 0 0 25%;
+  flex: 0 0 20%;
 }
 .tv-show-details .content .info {
-  margin: 4em;
+  margin: 3em;
+}
+.tv-show-details .content .info button {
+  font-size: 0.8em;
+  padding: 1em;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 8px;
+  margin-top: 1em;
+  border: 2px solid cadetblue;
+  transition: 0.3s ease;
+}
+.tv-show-details .content .info button:hover {
+  cursor: pointer;
+  border: 2px solid white;
 }
 .tv-show-details .content p {
   margin-top: 1em;
   width: 30ch;
 }
 .tv-show-details .comments {
+  align-items: center;
+  padding-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.tv-show-details .comments ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.tv-show-details .comments .comment {
+  background-color: cadetblue;
+  padding: 1em;
+  border-radius: 8px;
+}
+.tv-show-details .comments .comment {
+  width: fit-content;
+}
+.tv-show-details .comments .comment p {
+  padding: 0.2em;
+}
+
+.tv-show-details .add-comment form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+.tv-show-details .add-comment textarea {
+  margin-top: 0.5em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 1em;
+  padding: 1em;
+}
+.tv-show-details .add-comment button {
+  border: none;
+  padding: 1em 2em;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tv-show-details .comments .btns {
+  margin-top: 0.5em;
+}
+.tv-show-details .comments mat-icon {
+  cursor: pointer;
+  margin-left: 10px;
 }

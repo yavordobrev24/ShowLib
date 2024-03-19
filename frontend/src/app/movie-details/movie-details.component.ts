@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Form, NgForm } from '@angular/forms';
@@ -83,7 +83,7 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
-  save() {
+  saveMovie() {
     const lsLib = localStorage.getItem('library');
     const library = lsLib !== null ? JSON.parse(lsLib) : '';
     console.log(library);
@@ -98,6 +98,8 @@ export class MovieDetailsComponent implements OnInit {
   editComment(id: string) {
     this.commentToEdit = this.comments.find((x: any) => x._id == id);
     this.comments = this.comments.filter((x: any) => x._id != id);
+    console.log(typeof this.commentToEdit);
+
     this.commentAdded = false;
   }
 
@@ -106,7 +108,7 @@ export class MovieDetailsComponent implements OnInit {
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
     this.commentAdded = false;
   }
-  unsave() {
+  unsaveMovie() {
     const lsLib = localStorage.getItem('library');
     const library = lsLib !== null ? JSON.parse(lsLib) : '';
     console.log(library);
