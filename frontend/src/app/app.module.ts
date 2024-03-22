@@ -23,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { appInterceptorProvider } from './app.interceptor';
 import { FormsModule } from '@angular/forms';
+import { SafePipe } from './safe.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import { FormsModule } from '@angular/forms';
     TvShowsComponent,
     MovieDetailsComponent,
     TvShowDetailsComponent,
+    SafePipe,
   ],
   imports: [
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,

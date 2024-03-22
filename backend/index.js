@@ -1457,6 +1457,7 @@
       "1f4e66bd-19e7-4d89-b23e-314b549616ad": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Joker",
+        video: "https://www.youtube.com/embed/zAGVQLHvwOY",
         description:
           "A psychological thriller following a failed comedian descending into insanity and becoming an iconic villain.",
         img: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
@@ -1466,6 +1467,7 @@
       "90cef92d-374e-488e-827e-030e14b47524": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Northman",
+        video: "https://www.youtube.com/embed/oMSdFM12hOw",
         description:
           "A young Viking prince is on a quest to avenge his father's murder.",
         img: "https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_.jpg",
@@ -1478,11 +1480,13 @@
         description:
           "The film is a dark satire of yuppie culture and materialism in the 1980s. It is known for its graphic violence, disturbing imagery, and darkly comedic tone.",
         img: "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        video: "https://www.youtube.com/embed/81mibtQWWBg",
         _createdOn: 1614935268135,
         _id: "c778e298-fa3e-4e1f-9ddd-4dffa32212ef",
       },
       "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/giXco2jaZ_4",
         title: "Top Gun 2",
         description:
           "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
@@ -1492,6 +1496,7 @@
       },
       "719155e0-0945-4230-9d8c-3c471e5a6837": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/Ify9S7hj480",
         title: "The Gentlemen",
         description:
           "A powerful criminal kingpin in London wants to retire and sell his marijuana empire. Multiple interested parties emerge, leading to a web of betrayal, violence, and dark humor.",
@@ -1504,6 +1509,7 @@
       "f32723d6-a66b-471a-a7e0-343884172a16": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Walking Dead",
+        video: "https://www.youtube.com/embed/sfAc2U20uyg",
         description:
           "The Walking Dead follows a group of survivors in a world overrun by walkers (zombies). They face constant threats from both the walkers and other human groups who will do anything to survive. The story focuses on their struggle to stay alive, find a safe haven, and rebuild a semblance of society.",
         img: "https://m.media-amazon.com/images/M/MV5BNzI5MjUyYTEtMTljZC00NGI5LWFhNWYtYjY0ZTQ5YmEzMWRjXkEyXkFqcGdeQXVyMTY3MDE5MDY1._V1_FMjpg_UX1000_.jpg",
@@ -1514,6 +1520,7 @@
       "0b2f73ea-ebbf-40f9-a110-3ce26669c663": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Shōgun",
+        video: "https://www.youtube.com/embed/yAN5uspO_hk",
         description:
           "Clavell's Shōgun is historical fiction. The character of Blackthorne is loosely based on the historical English navigator William Adams, who in Japan rose to become a samurai under a powerful daimyō.",
         img: "https://m.media-amazon.com/images/M/MV5BMzhkNzVkNDYtNmE2Zi00ZTk1LTk2OWYtOTU5NWM5OWQ2Zjc0XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
@@ -1523,6 +1530,7 @@
       "12b0904f-4fe6-427d-ae72-988a648bb090": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Breaking Bad",
+        video: "https://www.youtube.com/embed/HhesaQXLuRY",
         description:
           "A high school chemistry teacher diagnosed with terminal cancer uses his knowledge to cook and sell crystal meth to ensure his family's financial security after his death.",
         img: "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
@@ -1532,6 +1540,7 @@
       "b2d0319f-f4c5-4baa-9695-e87a39c4eb25": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Planet Earth II",
+        video: "https://www.youtube.com/embed/h8yo_Sp-rGY",
         description:
           "This documentary series explores the diversity of life on Earth, showcasing the unique challenges faced by animals in different habitats.",
         img: "https://m.media-amazon.com/images/M/MV5BMGZmYmQ5NGQtNWQ1MC00NWZlLTg0MjYtYjJjMzQ5ODgxYzRkXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
@@ -1541,6 +1550,7 @@
       "a84e8381-0a62-44f6-9099-7612fe2a69da": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Mandalorian",
+        video: "https://www.youtube.com/embed/aOC8E8z_ifw",
         description:
           "This space Western is set in the Star Wars universe and follows a bounty hunter who travels the outer reaches of the galaxy.",
         img: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzU2YS00NzBlLTgwZWUtYWQzNWFhNDkyYjg3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
@@ -1550,9 +1560,11 @@
       "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Rick and Morty",
+        video: "https://www.youtube.com/embed/BFTSrbB2wII",
         description:
           "An adult animated science fiction sitcom about a mad scientist Rick Sanchez who involves his teenage grandson Morty Smith in dangerous adventures across the universe.",
         img: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
+
         _createdOn: 1614935268135,
         _id: "ec139692-6686-4eb0-85bc-c2c92ee6d6dc",
       },

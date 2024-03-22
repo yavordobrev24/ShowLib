@@ -1,5 +1,8 @@
 <div class="tv-shows-list">
-  <p>Most popular - TV Shows</p>
+  <div>
+    <p>Most popular - TV Shows</p>
+    <a routerLink="/movies">See All</a>
+  </div>
   <ul>
     <li *ngFor="let tvShow of tvShows" [routerLink]="['/tv-shows', tvShow._id]">
       <img [src]="tvShow.img" alt="{{ tvShow.title }}" />

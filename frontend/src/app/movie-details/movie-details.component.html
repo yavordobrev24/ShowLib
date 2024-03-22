@@ -1,36 +1,50 @@
 <div class="movie-details">
   <div class="content">
-    <div class="img">
-      <img [src]="movie?.img" alt="{{ movie?.title }}" />
+    <div class="trailer">
+      <iframe
+        [src]="movie?.video | safe"
+        [title]="movie?.title"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
     </div>
     <div class="info">
+      <div class="img">
+        <img [src]="movie?.img" [alt]="movie?.title" />
+        <mat-icon
+          *ngIf="hasSaved == false && isLogged"
+          (click)="saveMovie()"
+          class="save"
+          >bookmark_outline</mat-icon
+        >
+        <mat-icon
+          *ngIf="hasSaved == true && isLogged"
+          class="unsave"
+          (click)="unsaveMovie()"
+          >bookmark</mat-icon
+        >
+      </div>
       <h2>{{ movie?.title }}</h2>
       <p>{{ movie?.description }}</p>
-      <button *ngIf="hasSaved == false && isLogged" (click)="saveMovie()">
-        Save
-      </button>
-      <button *ngIf="hasSaved == true && isLogged" (click)="unsaveMovie()">
-        Unsave
-      </button>
-      <h3 *ngIf="hasSaved == true && isLogged">Saved</h3>
     </div>
   </div>
   <div class="add-comment" *ngIf="commentAdded == false && isLogged">
     <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)">
       <h3>Add comment</h3>
       <textarea name="comment" ngModel></textarea>
-      <button>Send Comment</button>
+      <button mat-button>Send comment</button>
     </form>
   </div>
   <div class="comments">
     <h3>Comments</h3>
     <ul *ngIf="comments?.length > 0">
       <li *ngFor="let comment of comments" class="comment">
-        <p>{{ comment?.content }}</p>
-
-        <p>
+        <p class="user">
           {{ comment?.username }}
         </p>
+        <p class="text">{{ comment?.content }}</p>
+
         <div class="btns" *ngIf="comment._ownerId == userId">
           <mat-icon (click)="editComment(comment._id)">edit</mat-icon>
           <mat-icon (click)="deleteComment(comment._id)">delete</mat-icon>

@@ -7,11 +7,12 @@
   font-size: 1.4em;
 }
 .library h3 {
+  margin-top: 2em;
   margin-bottom: 1em;
 }
 .library ul {
   display: flex;
-  gap: 4em;
+  gap: 2em;
   flex-wrap: wrap;
 }
 .library ul li {
@@ -29,4 +30,14 @@
 }
 .library > p {
   padding: 1em;
+}
+.library ul li:hover img {
+  transform: scale(1.05);
+  border: 2px solid white;
+}
+
+.library ul li img {
+  transition: transform 0.2s;
+  border-radius: 10px;
+  height: 12em;
 }

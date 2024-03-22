@@ -4,58 +4,61 @@
   gap: 3em;
 }
 .tv-show-details .content {
-  padding: 2em 6em;
-  width: 100%;
-  gap: 2em;
+  min-height: 400px;
   display: flex;
-  justify-content: center;
-}
-.tv-show-details .content .img {
-  flex: 0 0 20%;
+  margin: 0 auto;
 }
 .tv-show-details .content .info {
-  margin: 3em;
-}
-.tv-show-details .content .info button {
-  font-size: 0.8em;
   padding: 1em;
-  background-color: cadetblue;
-  color: white;
-  border-radius: 8px;
-  margin-top: 1em;
-  border: 2px solid cadetblue;
-  transition: 0.3s ease;
 }
-.tv-show-details .content .info button:hover {
-  cursor: pointer;
-  border: 2px solid white;
+.tv-show-details .content .info img {
+  width: 100px;
+  margin-bottom: 1em;
 }
-.tv-show-details .content p {
-  margin-top: 1em;
-  width: 30ch;
+.tv-show-details .content .trailer {
+  flex: 0 0 70%;
 }
+.tv-show-details .content .trailer iframe {
+  height: 100%;
+  width: 100%;
+}
+.tv-show-details .content .info p {
+  max-width: 60ch;
+}
+.tv-show-details .content .info h2 {
+  margin-bottom: 0.5em;
+}
+
 .tv-show-details .comments {
   align-items: center;
-  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3em;
 }
 .tv-show-details .comments ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 3em;
+  gap: 2em;
 }
 .tv-show-details .comments .comment {
-  background-color: cadetblue;
+  background-color: white;
+  color: black;
   padding: 1em;
-  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .tv-show-details .comments .comment {
+  border-radius: 8px;
   width: fit-content;
 }
 .tv-show-details .comments .comment p {
   padding: 0.2em;
+}
+.tv-show-details .comments .comment .user {
+  font-weight: bold;
 }
 
 .tv-show-details .add-comment form {
@@ -76,7 +79,7 @@
 .tv-show-details .add-comment button {
   border: none;
   padding: 1em 2em;
-  background-color: cadetblue;
+  background-color: rgb(48, 40, 40);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -87,4 +90,17 @@
 .tv-show-details .comments mat-icon {
   cursor: pointer;
   margin-left: 10px;
+}
+.tv-show-details .content .info .img {
+  position: relative;
+}
+.tv-show-details .content .info .img mat-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  font-size: 2em;
+  color: rgb(199, 188, 188);
+  cursor: pointer;
 }

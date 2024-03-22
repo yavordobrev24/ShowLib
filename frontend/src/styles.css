@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 html {
-  font: 18px/1 sans-serif;
+  font: 18px/1 Verdana, sans-serif;
 }
 body {
-  background: linear-gradient(90deg, #020e2d, #07232e);
+  background: rgb(20, 20, 20);
   min-height: 100vh;
-  color: rgb(247, 230, 230);
+  color: white;
 }
 ul {
   list-style-type: none;
