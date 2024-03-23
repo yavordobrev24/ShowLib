@@ -1554,6 +1554,26 @@
         _createdOn: 1614935181470,
         _id: "11ff7619-ba59-4fda-8c26-e560d4fa9be0",
       },
+      "7d0f48ed-5e10-41d8-9cdb-f13cec5e8631": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/U2Qp5pL3ovA",
+        title: "Dune: Part Two",
+        description:
+          "Paul Atreides, having embraced his destiny, must navigate the treacherous sands of Arrakis and confront new challenges that threaten his newfound power.",
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Dune_Part_Two_poster.jpeg/220px-Dune_Part_Two_poster.jpeg",
+        _createdOn: 1614935181470,
+        _id: "7d0f48ed-5e10-41d8-9cdb-f13cec5e8631",
+      },
+      "559f4c4e-addb-46f7-a705-b137a15c1b75": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/9eN_AGX8GXk",
+        title: "Damsel",
+        description:
+          "A princess on a quest to slay a dragon finds that the real challenge might be the prince himself. Expect action, humor, and a twist on the classic damsel-in-distress trope.",
+        img: "https://m.media-amazon.com/images/M/MV5BYmIzNWNiNjktNDM1YS00YjYxLThjMDEtYmE0NWMwNGE0ZmU0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+        _createdOn: 1614935181470,
+        _id: "559f4c4e-addb-46f7-a705-b137a15c1b75",
+      },
     },
     tvShows: {
       "f32723d6-a66b-471a-a7e0-343884172a16": {
@@ -1618,16 +1638,65 @@
         _createdOn: 1614935268135,
         _id: "ec139692-6686-4eb0-85bc-c2c92ee6d6dc",
       },
-      "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
+      "0ca2c62b-6649-4608-9e35-cacf31a82368": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        title: "Rick and Morty",
-        video: "https://www.youtube.com/embed/BFTSrbB2wII",
+        title: "The Crown",
+        video: "https://www.youtube.com/embed/JWtnJjn6ng0",
         description:
-          "An adult animated science fiction sitcom about a mad scientist Rick Sanchez who involves his teenage grandson Morty Smith in dangerous adventures across the universe.",
-        img: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
-
+          "Dive into the political rivalries and personal intrigues of Queen Elizabeth II's reign and the events that shaped the 20th century.",
+        img: "https://upload.wikimedia.org/wikipedia/en/b/ba/The_Crown_season_2.jpeg",
         _createdOn: 1614935268135,
-        _id: "ec139692-6686-4eb0-85bc-c2c92ee6d6dc",
+        _id: "0ca2c62b-6649-4608-9e35-cacf31a82368",
+      },
+      "6a3e1a4d-3570-4626-9ea2-4f6ce7220d65": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Stranger Things",
+        video: "https://www.youtube.com/embed/mnd7sFt5c3A",
+        description:
+          "In a small 1980s town, a group of kids uncovers a secret government experiment, a terrifying supernatural dimension, and a mysterious girl with extraordinary abilities.",
+        img: "https://resizing.flixster.com/0xxuABVVuzJrUT130WFHKE-irEg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzUyMTFhOTktZTU4Ni00ODkyLWJlYjQtZTgxYTllZmU2OGM0LmpwZw==",
+        _createdOn: 1614935268135,
+        _id: "6a3e1a4d-3570-4626-9ea2-4f6ce7220d65",
+      },
+      "fbdece76-6369-491e-9cf8-ff65f14beb53": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Succession",
+        video: "https://www.youtube.com/embed/6UmfmBZJ2uk",
+        description:
+          "Enter the cutthroat world of a media dynasty as the Roy family battles for power, control, and their father's approval. Expect dark humor, sharp dialogue, and a ruthless fight for the top spot.",
+        img: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15455205_b_v8_ab.jpg",
+        _createdOn: 1614935268135,
+        _id: "fbdece76-6369-491e-9cf8-ff65f14beb53",
+      },
+      "f77ec2ea-0a38-4d8a-8f23-d49a4f87184f": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Ted Lasso",
+        video: "https://www.youtube.com/embed/3u7EIiohs6U",
+        description:
+          "An American football coach with unwavering optimism is hired to lead a struggling English Premier League team despite his lack of soccer knowledge. This heartwarming comedy explores the power of kindness, belief, and cultural differences.",
+        img: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18378397_b_v13_ab.jpg",
+        _createdOn: 1614935268135,
+        _id: "f77ec2ea-0a38-4d8a-8f23-d49a4f87184f",
+      },
+      "2d213963-0032-4480-ba74-bab86c622a08": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "The Handmaid's Tale",
+        video: "https://www.youtube.com/embed/dVLiDETfx1c",
+        description:
+          "In a dystopian future with plummeting birth rates, fertile women are forced into servitude as handmaids, bearing children for the ruling elite. Witness a chilling portrayal of oppression and the fight for freedom.",
+        img: "https://m.media-amazon.com/images/M/MV5BN2M0NTdiMGYtNmFjZi00MjIxLWI3OTUtNTdmZDRlOTNiYWU0XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg",
+        _createdOn: 1614935268135,
+        _id: "2d213963-0032-4480-ba74-bab86c622a08",
+      },
+      "7901d0d9-a617-41f6-9bf9-e8f25777d407": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Schitt's Creek",
+        video: "https://www.youtube.com/embed/W0uWS6CnC2o",
+        description:
+          "A formerly wealthy family loses everything and is forced to rebuild their lives in a small, quirky town. This heartwarming comedy explores family dynamics, acceptance, and finding humor in unexpected places.",
+        img: "https://m.media-amazon.com/images/M/MV5BNWQ1ZmM3MTQtNTVhZC00MWVlLWI5ZjgtYmZiYWQxZjUzZWM0XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935268135,
+        _id: "7901d0d9-a617-41f6-9bf9-e8f25777d407",
       },
     },
 

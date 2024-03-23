@@ -1,6 +1,6 @@
 <div class="library">
-  <h2>Library</h2>
-  <h3>Saved Movies</h3>
+  <p class="lib">Library</p>
+  <p class="lib-section">Saved Movies</p>
   <ul *ngIf="library?.savedMovies.length > 0">
     <li
       *ngFor="let movie of library?.savedMovies"
@@ -11,7 +11,7 @@
     </li>
   </ul>
   <p *ngIf="library?.savedMovies.length === 0">No Movies saved.</p>
-  <h3>Saved TV Shows</h3>
+  <p class="lib-section">Saved TV Shows</p>
   <ul *ngIf="library?.savedTVShows.length > 0">
     <li
       *ngFor="let tvShow of library?.savedTVShows"

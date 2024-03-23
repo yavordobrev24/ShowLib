@@ -1,16 +1,14 @@
 .library {
-  padding: 0em 7em;
+  padding-inline: 7em;
+  padding-block: 0em 3em;
 }
 
-.library > h2 {
-  margin-bottom: 1em;
+.library > .lib {
+  margin-bottom: 0.5em;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
-.library h3 {
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
+
 .library ul {
   display: flex;
   gap: 2em;
