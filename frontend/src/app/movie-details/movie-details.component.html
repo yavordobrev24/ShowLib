@@ -30,9 +30,14 @@
     </div>
   </div>
   <div class="add-comment" *ngIf="commentAdded == false && isLogged">
-    <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)">
+    <form [formGroup]="commentForm" (ngSubmit)="addComment()">
       <h3>Add comment</h3>
-      <textarea name="comment" ngModel></textarea>
+      <textarea
+        name="comment"
+        formControlName="comment"
+        minlength="3"
+        maxlength="60"
+      ></textarea>
       <button mat-button>Send comment</button>
     </form>
   </div>

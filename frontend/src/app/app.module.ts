@@ -13,16 +13,14 @@ import { TvShowsListComponent } from './tv-shows-list/tv-shows-list.component';
 
 import { MoviesComponent } from './movies/movies.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
-import { UserRoutingModule } from './user/user-routing.module';
 import { UserModule } from './user/user.module';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { appInterceptorProvider } from './app.interceptor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SafePipe } from './safe.pipe';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -43,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     CoreModule,
     BrowserAnimationsModule,
     MatIconModule,

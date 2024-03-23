@@ -1,7 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Form, NgForm } from '@angular/forms';
+import {
+  Form,
+  FormControl,
+  FormGroup,
+  NgForm,
+  Validators,
+} from '@angular/forms';
 import { UserService } from '../user/user.service';
 
 @Component({
@@ -10,6 +16,9 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
+  commentForm = new FormGroup({
+    comment: new FormControl(''),
+  });
   movie: any;
   comments: any;
   movieId: string | null = null;
@@ -63,11 +72,13 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
-  addComment(form: NgForm) {
-    if (form.invalid) {
+  addComment() {
+    if (this.commentForm.invalid) {
       return;
     }
-    const { comment } = form.value;
+    console.log(this.commentForm.value);
+
+    const { comment }: any = this.commentForm.value;
 
     if (!this.commentToEdit) {
       this.apiService
@@ -98,7 +109,7 @@ export class MovieDetailsComponent implements OnInit {
   editComment(id: string) {
     this.commentToEdit = this.comments.find((x: any) => x._id == id);
     this.comments = this.comments.filter((x: any) => x._id != id);
-    console.log(typeof this.commentToEdit);
+    this.commentForm.patchValue({ comment: this.commentToEdit.content });
 
     this.commentAdded = false;
   }
@@ -106,6 +117,7 @@ export class MovieDetailsComponent implements OnInit {
   deleteComment(id: string) {
     this.comments = this.comments.filter((x: any) => x._id != id);
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
+    this.commentForm.patchValue({ comment: '' });
     this.commentAdded = false;
   }
   unsaveMovie() {

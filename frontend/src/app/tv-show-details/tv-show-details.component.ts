@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { UserService } from '../user/user.service';
 
 @Component({
@@ -10,6 +10,9 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./tv-show-details.component.css'],
 })
 export class TvShowDetailsComponent implements OnInit {
+  commentForm = new FormGroup({
+    comment: new FormControl(''),
+  });
   tvShow: any;
   comments: any;
   tvShowId: string | null = null;
@@ -72,11 +75,12 @@ export class TvShowDetailsComponent implements OnInit {
     }
   }
 
-  addComment(form: NgForm) {
-    if (form.invalid) {
+  addComment() {
+    if (this.commentForm.invalid) {
       return;
     }
-    const { comment } = form.value;
+    console.log(this.commentForm.value);
+    const { comment }: any = this.commentForm.value;
 
     if (!this.commentToEdit) {
       this.apiService
@@ -109,12 +113,14 @@ export class TvShowDetailsComponent implements OnInit {
   editComment(id: string) {
     this.commentToEdit = this.comments.find((x: any) => x._id == id);
     this.comments = this.comments.filter((x: any) => x._id != id);
+    this.commentForm.patchValue({ comment: this.commentToEdit.content });
     this.commentAdded = false;
   }
 
   deleteComment(id: string) {
     this.comments = this.comments.filter((x: any) => x._id != id);
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
+    this.commentForm.patchValue({ comment: '' });
     this.commentAdded = false;
   }
   unsaveTVShow() {
