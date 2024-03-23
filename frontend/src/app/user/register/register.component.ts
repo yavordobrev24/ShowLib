@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  error: any;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -18,21 +19,29 @@ export class RegisterComponent {
   ) {}
   register(form: NgForm) {
     if (form.invalid) {
+      this.error = 'Email and password required!';
       return;
     }
     const { username, email, password, rePassword } = form.value;
-    console.log(username, email, password);
     if (password !== rePassword) {
+      this.error = 'Passwords mismatch!';
       return;
     }
-    this.userService.register(username, email, password).subscribe((x: any) => {
-      this.userService.user = x;
-      localStorage.setItem('user', JSON.stringify(x));
-      this.apiService.createLibrary().subscribe((p: any) => {
-        const userLibrary = p;
-        localStorage.setItem('library', JSON.stringify(userLibrary));
-      });
-      this.router.navigate(['/home']);
-    });
+
+    this.userService.register(username, email, password).subscribe(
+      (x: any) => {
+        this.userService.user = x;
+        localStorage.setItem('user', JSON.stringify(x));
+        this.apiService.createLibrary().subscribe((p: any) => {
+          const userLibrary = p;
+          localStorage.setItem('library', JSON.stringify(userLibrary));
+        });
+        this.router.navigate(['/home']);
+      },
+      (e) => {
+        this.error = 'Account with this email already exists!';
+        return;
+      }
+    );
   }
 }

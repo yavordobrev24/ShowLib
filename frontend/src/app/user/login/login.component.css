@@ -24,3 +24,6 @@
   padding: 1.3em 2em;
   font-size: 1.1em;
 }
+.login .error {
+  color: red;
+}

@@ -3,20 +3,21 @@
   <form #registerForm="ngForm" (submit)="register(registerForm)">
     <mat-form-field>
       <mat-label>Username</mat-label>
-      <input matInput name="username" ngModel />
+      <input matInput name="username" ngModel required />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput name="email" ngModel />
+      <input matInput name="email" ngModel required />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput name="password" ngModel />
+      <input matInput name="password" ngModel required />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Repeat Password</mat-label>
-      <input matInput name="rePassword" ngModel />
+      <input matInput name="rePassword" ngModel required />
     </mat-form-field>
+    <p class="error" *ngIf="error">{{ error }}</p>
     <button mat-button>Submit</button>
   </form>
 </div>

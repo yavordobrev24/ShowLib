@@ -3,12 +3,13 @@
   <form #loginForm="ngForm" (submit)="login(loginForm)">
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput name="email" ngModel />
+      <input matInput name="email" ngModel required />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput name="password" ngModel />
+      <input matInput name="password" ngModel required />
     </mat-form-field>
+    <p *ngIf="error" class="error">{{ error }}</p>
     <button mat-button>Submit</button>
   </form>
 </div>
