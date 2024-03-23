@@ -1504,6 +1504,56 @@
         _createdOn: 1614935181470,
         _id: "719155e0-0945-4230-9d8c-3c471e5a6837",
       },
+      "62596964-569a-456f-b732-f3ec996d7acd": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/UaVTIH8mujA",
+        title: "The Godfather",
+        description:
+          "Delve into the Corleone family, a powerful mafia clan, as they navigate the ruthless world of organized crime. Witness the rise of Michael, the youngest son, from reluctant outsider to a cunning and ruthless leader.",
+        img: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935181470,
+        _id: "62596964-569a-456f-b732-f3ec996d7acd",
+      },
+      "6ad0e956-c799-4e58-bfc1-61b0123c91e4": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/5PSNL1qE6VY",
+        title: "Avatar",
+        description:
+          "A paraplegic marine, Jake Sully, journeys to the distant moon Pandora, home to the blue-skinned Na'vi people. Torn between duty and newfound connection, Jake must choose where his loyalties lie in a battle for the fate of this breathtaking world.",
+        img: "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935181470,
+        _id: "6ad0e956-c799-4e58-bfc1-61b0123c91e4",
+      },
+      "3d8f6d49-a673-4b8b-a6e8-ec52010f1f06": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/TcMBFSGVi1c",
+        title: "Avengers: Endgame",
+        description:
+          "After Thanos' devastating snap, the remaining Avengers face a seemingly impossible task: reversing the damage and restoring balance to the universe. Prepare for epic battles, emotional reunions, and heroic sacrifices in this culmination of the Infinity Saga.",
+        img: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
+        _createdOn: 1614935181470,
+        _id: "3d8f6d49-a673-4b8b-a6e8-ec52010f1f06",
+      },
+      "a8a10552-1296-4e4c-8ef5-ea07a4fc8aaa": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/uYPbbksJxIg",
+        title: "Oppenheimer",
+        description:
+          "Explore the life of J. Robert Oppenheimer, the brilliant physicist who forever changed the course of history with the development of the atomic bomb.",
+        img: "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
+        _createdOn: 1614935181470,
+        _id: "a8a10552-1296-4e4c-8ef5-ea07a4fc8aaa",
+      },
+      "11ff7619-ba59-4fda-8c26-e560d4fa9be0": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        video: "https://www.youtube.com/embed/_inKs4eeHiI",
+        title: "Kung Fu Panda 4",
+        description:
+          "Po and the Furious Five return for another adventure, facing a new threat that demands they push their kung fu skills to the limit.",
+        img: "https://m.media-amazon.com/images/M/MV5BZDY0YzI0OTctYjVhYy00MTVhLWE0NTgtYTRmYTBmOTE3YTViXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg",
+        _createdOn: 1614935181470,
+        _id: "11ff7619-ba59-4fda-8c26-e560d4fa9be0",
+      },
     },
     tvShows: {
       "f32723d6-a66b-471a-a7e0-343884172a16": {
@@ -1556,6 +1606,17 @@
         img: "https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzU2YS00NzBlLTgwZWUtYWQzNWFhNDkyYjg3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
         _createdOn: 1614935268135,
         _id: "a84e8381-0a62-44f6-9099-7612fe2a69da",
+      },
+      "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        title: "Rick and Morty",
+        video: "https://www.youtube.com/embed/BFTSrbB2wII",
+        description:
+          "An adult animated science fiction sitcom about a mad scientist Rick Sanchez who involves his teenage grandson Morty Smith in dangerous adventures across the universe.",
+        img: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
+
+        _createdOn: 1614935268135,
+        _id: "ec139692-6686-4eb0-85bc-c2c92ee6d6dc",
       },
       "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",

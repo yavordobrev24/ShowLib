@@ -1,7 +1,9 @@
 <div class="tv-shows-list">
   <div>
     <p>Most popular - TV Shows</p>
-    <a routerLink="/movies">See All</a>
+    <a routerLink="/tv-shows" class="see-all"
+      >See All <mat-icon>arrow_forward_ios</mat-icon></a
+    >
   </div>
   <ul>
     <li *ngFor="let tvShow of tvShows" [routerLink]="['/tv-shows', tvShow._id]">

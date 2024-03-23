@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { TvShowsListComponent } from './tv-shows-list/tv-shows-list.component';
 
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MoviesComponent } from './movies/movies.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import { UserModule } from './user/user.module';
@@ -49,6 +50,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    MatTooltipModule,
     FormsModule,
   ],
   providers: [appInterceptorProvider],

@@ -16,11 +16,13 @@
           *ngIf="hasSaved == false && isLogged"
           (click)="saveMovie()"
           class="save"
+          matTooltip="Save"
           >bookmark_outline</mat-icon
         >
         <mat-icon
           *ngIf="hasSaved == true && isLogged"
           class="unsave"
+          matTooltip="Unsave"
           (click)="unsaveMovie()"
           >bookmark</mat-icon
         >

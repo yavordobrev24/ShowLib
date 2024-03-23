@@ -10,13 +10,7 @@
   margin-bottom: 1em;
   font-size: 1.2em;
 }
-.tv-shows-list > div > a {
-  color: rgb(109, 103, 109);
-  padding: 1em;
-}
-.tv-shows-list > div > a:hover {
-  color: white;
-}
+
 .tv-shows-list ul {
   display: flex;
   gap: 1.5em;
@@ -40,4 +34,14 @@
 .tv-shows-list ul li p {
   padding: 1em;
   text-align: center;
+}
+.tv-shows-list .see-all {
+  display: flex;
+  align-items: center;
+  color: rgb(109, 103, 109);
+  padding: 1em;
+  transition: 0.2s;
+}
+.tv-shows-list .see-all:hover {
+  color: white;
 }
