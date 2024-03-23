@@ -2,19 +2,17 @@
   padding: 3em 7em;
 }
 
-.movies > h2 {
+.movies > p {
   margin-bottom: 1em;
   font-size: 1.4em;
 }
 .movies ul {
   display: flex;
   gap: 2em;
-
   flex-wrap: wrap;
 }
 .movies ul li:hover img {
   transform: scale(1.05);
-  border: 2px solid white;
 }
 .movies ul li {
   width: 10em;
@@ -22,7 +20,7 @@
   cursor: pointer;
 }
 .movies ul li img {
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   border-radius: 10px;
   height: 12em;
 }

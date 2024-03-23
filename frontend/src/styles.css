@@ -7,9 +7,9 @@ html {
   font: 18px/1 Verdana, sans-serif;
 }
 body {
-  background: rgb(20, 20, 20);
+  background: white;
   min-height: 100vh;
-  color: white;
+  color: black;
 }
 ul {
   list-style-type: none;

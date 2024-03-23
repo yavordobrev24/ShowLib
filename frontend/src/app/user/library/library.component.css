@@ -1,9 +1,10 @@
 .library {
-  padding: 3em 7em;
+  padding: 0em 7em;
 }
 
 .library > h2 {
   margin-bottom: 1em;
+  text-align: center;
   font-size: 1.4em;
 }
 .library h3 {
@@ -33,11 +34,10 @@
 }
 .library ul li:hover img {
   transform: scale(1.05);
-  border: 2px solid white;
 }
 
 .library ul li img {
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   border-radius: 10px;
   height: 12em;
 }

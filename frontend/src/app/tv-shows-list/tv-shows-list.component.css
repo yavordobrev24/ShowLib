@@ -6,7 +6,6 @@
   justify-content: space-between;
 }
 .tv-shows-list > div > p {
-  font-weight: bold;
   margin-bottom: 1em;
   font-size: 1.2em;
 }
@@ -14,7 +13,6 @@
 .tv-shows-list ul {
   display: flex;
   gap: 1.5em;
-
   flex-wrap: wrap;
 }
 .tv-shows-list ul li {
@@ -24,11 +22,10 @@
 }
 .tv-shows-list ul li:hover img {
   transform: scale(1.05);
-  border: 2px solid white;
 }
 .tv-shows-list ul li img {
   border-radius: 10px;
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   height: 12em;
 }
 .tv-shows-list ul li p {
@@ -38,10 +35,12 @@
 .tv-shows-list .see-all {
   display: flex;
   align-items: center;
-  color: rgb(109, 103, 109);
+  color: rgb(152, 143, 152);
   padding: 1em;
-  transition: 0.2s;
+  border-radius: 30px;
+  transition: 0.3s background-color;
 }
 .tv-shows-list .see-all:hover {
+  background-color: rgb(121, 117, 121);
   color: white;
 }
