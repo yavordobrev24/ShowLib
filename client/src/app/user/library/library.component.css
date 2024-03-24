@@ -1,18 +1,24 @@
 .library {
   padding-inline: 7em;
-  padding-block: 0em 3em;
+  padding-block: 0em 2em;
 }
 
-.library > .lib {
-  margin-bottom: 0.5em;
+.library > p {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+.library .none {
+  font-size: 1.2em;
   text-align: center;
-  font-size: 1.6em;
+  margin-top: 1.5em;
 }
-
 .library ul {
   display: flex;
   gap: 2em;
   flex-wrap: wrap;
+}
+.library ul li:hover img {
+  transform: scale(1.05);
 }
 .library ul li {
   width: 10em;
@@ -20,22 +26,11 @@
   cursor: pointer;
 }
 .library ul li img {
+  transition: transform 0.1s;
   border-radius: 10px;
   height: 12em;
 }
 .library ul li p {
   padding: 1em;
   text-align: center;
-}
-.library > p {
-  padding: 1em;
-}
-.library ul li:hover img {
-  transform: scale(1.05);
-}
-
-.library ul li img {
-  transition: transform 0.1s;
-  border-radius: 10px;
-  height: 12em;
 }

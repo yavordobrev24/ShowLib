@@ -1,9 +1,9 @@
-<div class="tv-show-details">
+<div class="details">
   <div class="content">
     <div class="trailer">
       <iframe
-        [src]="tvShow?.video | safe"
-        [title]="tvShow?.title"
+        [src]="show?.video | safe"
+        [title]="show?.title"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
@@ -11,10 +11,10 @@
     </div>
     <div class="info">
       <div class="img">
-        <img [src]="tvShow?.img" [alt]="tvShow?.title" />
+        <img [src]="show?.img" [alt]="show?.title" />
         <mat-icon
           *ngIf="hasSaved == false && isLogged"
-          (click)="saveTVShow()"
+          (click)="saveShow()"
           class="save"
           matTooltip="Save"
           >bookmark_outline</mat-icon
@@ -23,12 +23,16 @@
           *ngIf="hasSaved == true && isLogged"
           class="unsave"
           matTooltip="Unsave"
-          (click)="unsaveTVShow()"
+          (click)="unsaveShow()"
           >bookmark</mat-icon
         >
       </div>
-      <h2>{{ tvShow?.title }}</h2>
-      <p>{{ tvShow?.description }}</p>
+
+      <h2>{{ show?.title }}</h2>
+      <p>{{ show?.description }}</p>
+      <mat-chip class="chip">
+        {{ show?.type }}
+      </mat-chip>
     </div>
   </div>
   <div class="add-comment" *ngIf="commentAdded == false && isLogged">

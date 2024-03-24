@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { MoviesComponent } from './movies/movies.component';
-import { TvShowsComponent } from './tv-shows/tv-shows.component';
+import { DiscoverComponent } from './discover/discover.component';
 import { UserRoutingModule } from './user/user-routing.module';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.component';
+import { DetailsComponent } from './details/details.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -19,21 +18,20 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'movies',
-    component: MoviesComponent,
+    path: 'discover',
+    component: DiscoverComponent,
   },
+  { path: 'search', redirectTo: 'search' },
   {
-    path: 'tv-shows',
-    component: TvShowsComponent,
+    path: 'search/:searchValue',
+    component: SearchComponent,
   },
+
   {
-    path: 'movies/:id',
-    component: MovieDetailsComponent,
+    path: 'details/:id',
+    component: DetailsComponent,
   },
-  {
-    path: 'tv-shows/:id',
-    component: TvShowDetailsComponent,
-  },
+
   { path: '**', component: NotFoundComponent },
 ];
 

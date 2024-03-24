@@ -1453,10 +1453,11 @@
         _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
       },
     },
-    movies: {
+    shows: {
       "1f4e66bd-19e7-4d89-b23e-314b549616ad": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Joker",
+        type: "movie",
         video: "https://www.youtube.com/embed/zAGVQLHvwOY",
         description:
           "A psychological thriller following a failed comedian descending into insanity and becoming an iconic villain.",
@@ -1467,6 +1468,7 @@
       "90cef92d-374e-488e-827e-030e14b47524": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Northman",
+        type: "movie",
         video: "https://www.youtube.com/embed/oMSdFM12hOw",
         description:
           "A young Viking prince is on a quest to avenge his father's murder.",
@@ -1477,6 +1479,7 @@
       "c778e298-fa3e-4e1f-9ddd-4dffa32212ef": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "American Psycho",
+        type: "movie",
         description:
           "The film is a dark satire of yuppie culture and materialism in the 1980s. It is known for its graphic violence, disturbing imagery, and darkly comedic tone.",
         img: "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
@@ -1488,6 +1491,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/giXco2jaZ_4",
         title: "Top Gun 2",
+        type: "movie",
         description:
           "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
         img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
@@ -1498,6 +1502,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/Ify9S7hj480",
         title: "The Gentlemen",
+        type: "movie",
         description:
           "A powerful criminal kingpin in London wants to retire and sell his marijuana empire. Multiple interested parties emerge, leading to a web of betrayal, violence, and dark humor.",
         img: "https://m.media-amazon.com/images/M/MV5BMTlkMmVmYjktYTc2NC00ZGZjLWEyOWUtMjc2MDMwMjQwOTA5XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_FMjpg_UX1000_.jpg",
@@ -1508,6 +1513,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/UaVTIH8mujA",
         title: "The Godfather",
+        type: "movie",
         description:
           "Delve into the Corleone family, a powerful mafia clan, as they navigate the ruthless world of organized crime. Witness the rise of Michael, the youngest son, from reluctant outsider to a cunning and ruthless leader.",
         img: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
@@ -1518,6 +1524,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/5PSNL1qE6VY",
         title: "Avatar",
+        type: "movie",
         description:
           "A paraplegic marine, Jake Sully, journeys to the distant moon Pandora, home to the blue-skinned Na'vi people. Torn between duty and newfound connection, Jake must choose where his loyalties lie in a battle for the fate of this breathtaking world.",
         img: "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_FMjpg_UX1000_.jpg",
@@ -1528,6 +1535,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/TcMBFSGVi1c",
         title: "Avengers: Endgame",
+        type: "movie",
         description:
           "After Thanos' devastating snap, the remaining Avengers face a seemingly impossible task: reversing the damage and restoring balance to the universe. Prepare for epic battles, emotional reunions, and heroic sacrifices in this culmination of the Infinity Saga.",
         img: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
@@ -1538,6 +1546,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/uYPbbksJxIg",
         title: "Oppenheimer",
+        type: "movie",
         description:
           "Explore the life of J. Robert Oppenheimer, the brilliant physicist who forever changed the course of history with the development of the atomic bomb.",
         img: "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
@@ -1548,6 +1557,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/_inKs4eeHiI",
         title: "Kung Fu Panda 4",
+        type: "movie",
         description:
           "Po and the Furious Five return for another adventure, facing a new threat that demands they push their kung fu skills to the limit.",
         img: "https://m.media-amazon.com/images/M/MV5BZDY0YzI0OTctYjVhYy00MTVhLWE0NTgtYTRmYTBmOTE3YTViXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg",
@@ -1558,6 +1568,7 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/U2Qp5pL3ovA",
         title: "Dune: Part Two",
+        type: "movie",
         description:
           "Paul Atreides, having embraced his destiny, must navigate the treacherous sands of Arrakis and confront new challenges that threaten his newfound power.",
         img: "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Dune_Part_Two_poster.jpeg/220px-Dune_Part_Two_poster.jpeg",
@@ -1568,17 +1579,17 @@
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         video: "https://www.youtube.com/embed/9eN_AGX8GXk",
         title: "Damsel",
+        type: "movie",
         description:
           "A princess on a quest to slay a dragon finds that the real challenge might be the prince himself. Expect action, humor, and a twist on the classic damsel-in-distress trope.",
         img: "https://m.media-amazon.com/images/M/MV5BYmIzNWNiNjktNDM1YS00YjYxLThjMDEtYmE0NWMwNGE0ZmU0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
         _createdOn: 1614935181470,
         _id: "559f4c4e-addb-46f7-a705-b137a15c1b75",
       },
-    },
-    tvShows: {
       "f32723d6-a66b-471a-a7e0-343884172a16": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Walking Dead",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/sfAc2U20uyg",
         description:
           "The Walking Dead follows a group of survivors in a world overrun by walkers (zombies). They face constant threats from both the walkers and other human groups who will do anything to survive. The story focuses on their struggle to stay alive, find a safe haven, and rebuild a semblance of society.",
@@ -1590,6 +1601,7 @@
       "0b2f73ea-ebbf-40f9-a110-3ce26669c663": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Shōgun",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/yAN5uspO_hk",
         description:
           "Clavell's Shōgun is historical fiction. The character of Blackthorne is loosely based on the historical English navigator William Adams, who in Japan rose to become a samurai under a powerful daimyō.",
@@ -1600,6 +1612,7 @@
       "12b0904f-4fe6-427d-ae72-988a648bb090": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Breaking Bad",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/HhesaQXLuRY",
         description:
           "A high school chemistry teacher diagnosed with terminal cancer uses his knowledge to cook and sell crystal meth to ensure his family's financial security after his death.",
@@ -1610,6 +1623,7 @@
       "b2d0319f-f4c5-4baa-9695-e87a39c4eb25": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Planet Earth II",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/h8yo_Sp-rGY",
         description:
           "This documentary series explores the diversity of life on Earth, showcasing the unique challenges faced by animals in different habitats.",
@@ -1620,6 +1634,7 @@
       "a84e8381-0a62-44f6-9099-7612fe2a69da": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Mandalorian",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/aOC8E8z_ifw",
         description:
           "This space Western is set in the Star Wars universe and follows a bounty hunter who travels the outer reaches of the galaxy.",
@@ -1630,6 +1645,7 @@
       "ec139692-6686-4eb0-85bc-c2c92ee6d6dc": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Rick and Morty",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/BFTSrbB2wII",
         description:
           "An adult animated science fiction sitcom about a mad scientist Rick Sanchez who involves his teenage grandson Morty Smith in dangerous adventures across the universe.",
@@ -1641,6 +1657,7 @@
       "0ca2c62b-6649-4608-9e35-cacf31a82368": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Crown",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/JWtnJjn6ng0",
         description:
           "Dive into the political rivalries and personal intrigues of Queen Elizabeth II's reign and the events that shaped the 20th century.",
@@ -1651,6 +1668,7 @@
       "6a3e1a4d-3570-4626-9ea2-4f6ce7220d65": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Stranger Things",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/mnd7sFt5c3A",
         description:
           "In a small 1980s town, a group of kids uncovers a secret government experiment, a terrifying supernatural dimension, and a mysterious girl with extraordinary abilities.",
@@ -1661,6 +1679,7 @@
       "fbdece76-6369-491e-9cf8-ff65f14beb53": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Succession",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/6UmfmBZJ2uk",
         description:
           "Enter the cutthroat world of a media dynasty as the Roy family battles for power, control, and their father's approval. Expect dark humor, sharp dialogue, and a ruthless fight for the top spot.",
@@ -1671,6 +1690,7 @@
       "f77ec2ea-0a38-4d8a-8f23-d49a4f87184f": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Ted Lasso",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/3u7EIiohs6U",
         description:
           "An American football coach with unwavering optimism is hired to lead a struggling English Premier League team despite his lack of soccer knowledge. This heartwarming comedy explores the power of kindness, belief, and cultural differences.",
@@ -1681,6 +1701,7 @@
       "2d213963-0032-4480-ba74-bab86c622a08": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "The Handmaid's Tale",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/dVLiDETfx1c",
         description:
           "In a dystopian future with plummeting birth rates, fertile women are forced into servitude as handmaids, bearing children for the ruling elite. Witness a chilling portrayal of oppression and the fight for freedom.",
@@ -1691,6 +1712,7 @@
       "7901d0d9-a617-41f6-9bf9-e8f25777d407": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         title: "Schitt's Creek",
+        type: "tvShow",
         video: "https://www.youtube.com/embed/W0uWS6CnC2o",
         description:
           "A formerly wealthy family loses everything and is forced to rebuild their lives in a small, quirky town. This heartwarming comedy explores family dynamics, acceptance, and finding humor in unexpected places.",
@@ -1703,8 +1725,7 @@
     libraries: {
       "654b13-11ee-b962-0242ac120002": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        savedMovies: [],
-        savedTVShows: [],
+        savedShows: [],
       },
     },
   };

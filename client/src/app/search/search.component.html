@@ -1,0 +1,12 @@
+<div class="search">
+  <p>Search</p>
+  <ul>
+    <li *ngFor="let show of shows" [routerLink]="['/details', show?._id]">
+      <img [src]="show.img" alt="{{ show.title }}" />
+      <p>{{ show.title }}</p>
+    </li>
+  </ul>
+  <p class="none" *ngIf="shows?.length == 0">
+    There isn't a show with that name.
+  </p>
+</div>

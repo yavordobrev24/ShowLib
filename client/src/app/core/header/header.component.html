@@ -1,7 +1,7 @@
 <header>
   <a routerLink="/home" class="logo">ShowLib</a>
   <div class="search-bar">
-    <input type="text" placeholder="Search..." name="search" #search />
+    <input type="text" placeholder="Search" name="search" #search />
     <mat-icon (click)="onSearch(search.value)"> search </mat-icon>
   </div>
   <nav>
@@ -10,13 +10,8 @@
         <a routerLink="/home" matTooltip="Home"><mat-icon>home</mat-icon></a>
       </li>
       <li>
-        <a routerLink="/movies" matTooltip="Movies"
-          ><mat-icon>movie</mat-icon></a
-        >
-      </li>
-      <li>
-        <a routerLink="/tv-shows" matTooltip="TV Shows"
-          ><mat-icon>live_tv</mat-icon></a
+        <a routerLink="/discover" matTooltip="Discover"
+          ><mat-icon>track_changes</mat-icon></a
         >
       </li>
 

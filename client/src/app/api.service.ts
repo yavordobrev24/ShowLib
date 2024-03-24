@@ -2,23 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { UserService } from './user/user.service';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  searchValue: any;
   constructor(private http: HttpClient, private userService: UserService) {}
-  getMovies() {
-    return this.http.get('/api/data/movies');
+  getAllShows() {
+    return this.http.get('/api/data/shows');
   }
-  getTVShows() {
-    return this.http.get('/api/data/tvShows');
+  getMoviesOrTVShows(type: string) {
+    return this.getAllShows().pipe(
+      map((shows: any) => {
+        return shows.filter((show: any) => show.type == type);
+      })
+    );
   }
-  getMovie(id: string | null) {
-    return this.http.get('/api/data/movies/' + id);
-  }
-  getTVShow(id: string | null) {
-    return this.http.get('/api/data/tvShows/' + id);
+  getShowById(id: string | null) {
+    return this.http.get('/api/data/shows/' + id);
   }
   getComments() {
     return this.http.get('/api/data/comments');
@@ -33,8 +36,7 @@ export class ApiService {
   }
   createLibrary() {
     const data = {
-      savedTVShows: [],
-      savedMovies: [],
+      savedShows: [],
     };
     return this.http.post('/api/data/libraries', data, {
       headers: {
@@ -45,8 +47,7 @@ export class ApiService {
   }
   saveToUserLibrary(lib: any) {
     const data = {
-      savedMovies: lib.savedMovies,
-      savedTVShows: lib.savedTVShows,
+      savedShows: lib.savedShows,
       _ownerId: this.userService.user._id,
     };
     return this.http.put(`/api/data/libraries/${lib._id}`, data, {
@@ -58,8 +59,7 @@ export class ApiService {
   }
   removeFromUserLibrary(lib: any) {
     const data = {
-      savedMovies: lib.savedMovies,
-      savedTVShows: lib.savedTVShows,
+      savedShows: lib.savedShows,
       _ownerId: this.userService.user._id,
     };
 
@@ -102,12 +102,4 @@ export class ApiService {
       },
     });
   }
-  // getAllShows() {
-  //   return this.http.get('/api/data/shows');
-  // }
-  // performSearch(searchValue: string) {
-  //   this.getAllShows().subscribe((x: any) => {
-  //     return x.find((y: any) => y.title === searchValue);
-  //   });
-  // }
 }

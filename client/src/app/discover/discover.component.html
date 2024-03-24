@@ -1,6 +1,6 @@
-<div class="library">
-  <p class="lib">Library</p>
-  <form [formGroup]="findForm">
+<div class="discover">
+  <p>Discover</p>
+  <form [formGroup]="discoverForm">
     <mat-form-field>
       <mat-label>Choose type</mat-label>
       <mat-select formControlName="selectedType" name="food">
@@ -16,5 +16,4 @@
       <p>{{ show.title }}</p>
     </li>
   </ul>
-  <p class="none" *ngIf="shows.length == 0">There aren't any saved shows.</p>
 </div>

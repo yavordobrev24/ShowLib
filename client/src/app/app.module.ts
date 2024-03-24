@@ -12,11 +12,8 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { TvShowsListComponent } from './tv-shows-list/tv-shows-list.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MoviesComponent } from './movies/movies.component';
-import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import { UserModule } from './user/user.module';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.component';
+import { DetailsComponent } from './details/details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +21,9 @@ import { appInterceptorProvider } from './app.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SafePipe } from './safe.pipe';
 import { MatButtonModule } from '@angular/material/button';
+import { DiscoverComponent } from './discover/discover.component';
+import { SearchComponent } from './search/search.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -32,11 +32,10 @@ import { MatButtonModule } from '@angular/material/button';
     NotFoundComponent,
     MoviesListComponent,
     TvShowsListComponent,
-    MoviesComponent,
-    TvShowsComponent,
-    MovieDetailsComponent,
-    TvShowDetailsComponent,
+    DiscoverComponent,
+    DetailsComponent,
     SafePipe,
+    SearchComponent,
   ],
   imports: [
     MatButtonModule,
@@ -52,6 +51,7 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     MatTooltipModule,
     FormsModule,
+    MatChipsModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],

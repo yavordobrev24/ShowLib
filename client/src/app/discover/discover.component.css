@@ -1,30 +1,31 @@
-.movies {
-  padding: 3em 7em;
+.discover {
+  padding-inline: 7em;
+  padding-block: 0em 2em;
 }
 
-.movies > p {
+.discover > p {
   margin-bottom: 1em;
   font-size: 1.4em;
 }
-.movies ul {
+.discover ul {
   display: flex;
   gap: 2em;
   flex-wrap: wrap;
 }
-.movies ul li:hover img {
+.discover ul li:hover img {
   transform: scale(1.05);
 }
-.movies ul li {
+.discover ul li {
   width: 10em;
   border-radius: 10px;
   cursor: pointer;
 }
-.movies ul li img {
+.discover ul li img {
   transition: transform 0.1s;
   border-radius: 10px;
   height: 12em;
 }
-.movies ul li p {
+.discover ul li p {
   padding: 1em;
   text-align: center;
 }

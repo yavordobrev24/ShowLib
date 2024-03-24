@@ -1,12 +1,12 @@
 <div class="tv-shows-list">
   <div>
     <p>Most popular - TV Shows</p>
-    <a routerLink="/tv-shows" class="see-all"
+    <a routerLink="/discover" class="see-all"
       >See All <mat-icon>arrow_forward_ios</mat-icon></a
     >
   </div>
   <ul>
-    <li *ngFor="let tvShow of tvShows" [routerLink]="['/tv-shows', tvShow._id]">
+    <li *ngFor="let tvShow of tvShows" [routerLink]="['/details', tvShow._id]">
       <img [src]="tvShow.img" alt="{{ tvShow.title }}" />
       <p>{{ tvShow.title }}</p>
     </li>

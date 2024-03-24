@@ -1,31 +1,36 @@
-.tv-shows {
-  padding: 3em 7em;
+.search {
+  padding-inline: 7em;
+  padding-block: 0em 2em;
 }
 
-.tv-shows > p {
+.search > p {
   margin-bottom: 1em;
   font-size: 1.4em;
 }
-.tv-shows ul {
+.search .none {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+}
+.search ul {
   display: flex;
   gap: 2em;
-
   flex-wrap: wrap;
 }
-.tv-shows ul li:hover img {
+.search ul li:hover img {
   transform: scale(1.05);
 }
-.tv-shows ul li {
+.search ul li {
   width: 10em;
   border-radius: 10px;
   cursor: pointer;
 }
-.tv-shows ul li img {
+.search ul li img {
   transition: transform 0.1s;
   border-radius: 10px;
   height: 12em;
 }
-.tv-shows ul li p {
+.search ul li p {
   padding: 1em;
   text-align: center;
 }

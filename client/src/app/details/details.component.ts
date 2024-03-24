@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user/user.service';
 
 @Component({
-  selector: 'app-tv-show-details',
-  templateUrl: './tv-show-details.component.html',
-  styleUrls: ['./tv-show-details.component.css'],
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.css'],
 })
-export class TvShowDetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit {
   commentForm = new FormGroup({
     comment: new FormControl(''),
   });
-  tvShow: any;
+  show: any;
   comments: any;
-  tvShowId: string | null = null;
+  showId: string | null = null;
   commentAdded: boolean | undefined;
   userId: any;
   hasSaved: any;
@@ -33,40 +33,31 @@ export class TvShowDetailsComponent implements OnInit {
     this.isLogged = this.userService.isLogged;
 
     this.route.params.subscribe((params) => {
-      this.tvShowId = params['id'];
+      this.showId = params['id'];
     });
     if (this.isLogged) {
       this.userId = this.userService.user._id;
     }
     this.apiService
-      .getTVShow(this.tvShowId)
-      .subscribe((data: any) => (this.tvShow = data));
+      .getShowById(this.showId)
+      .subscribe((data: any) => (this.show = data));
 
     this.apiService.getComments().subscribe((x) => {
-      console.log('TV SHOW COMMENTS: ', x);
-
-      this.comments = Object.values(x).filter(
-        (y) => y.showId === this.tvShowId
-      );
-      console.log(this.comments);
-
+      this.comments = Object.values(x).filter((y) => y.showId === this.showId);
       if (
         this.comments?.find(
           (x: any) => x._ownerId == this.userService.user?._id
         )
       ) {
-        console.log('Comment Added');
-
         this.commentAdded = true;
       } else {
-        console.log('Comment NOT Added');
         this.commentAdded = false;
       }
     });
     const lsLib = localStorage.getItem('library');
     const library = lsLib !== null ? JSON.parse(lsLib) : '';
 
-    if (library.savedTVShows?.find((x: any) => this.tvShowId == x._id)) {
+    if (library.savedShows?.find((x: any) => this.showId == x._id)) {
       console.log('Has saved');
 
       this.hasSaved = true;
@@ -80,14 +71,13 @@ export class TvShowDetailsComponent implements OnInit {
       return;
     }
     console.log(this.commentForm.value);
+
     const { comment }: any = this.commentForm.value;
 
     if (!this.commentToEdit) {
       this.apiService
-        .addComment(this.tvShowId, comment)
+        .addComment(this.showId, comment)
         .subscribe((x) => this.comments.push(x));
-      console.log('TV SHOW COMMENT: ', comment);
-
       this.commentAdded = true;
     } else {
       this.commentToEdit.content = comment;
@@ -98,12 +88,12 @@ export class TvShowDetailsComponent implements OnInit {
     }
   }
 
-  saveTVShow() {
+  saveShow() {
     const lsLib = localStorage.getItem('library');
     const library = lsLib !== null ? JSON.parse(lsLib) : '';
     console.log(library);
 
-    library.savedTVShows.push(this.tvShow);
+    library.savedShows.push(this.show);
     localStorage.setItem('library', JSON.stringify(library));
     this.apiService.saveToUserLibrary(library).subscribe((x) => console.log(x));
 
@@ -114,6 +104,7 @@ export class TvShowDetailsComponent implements OnInit {
     this.commentToEdit = this.comments.find((x: any) => x._id == id);
     this.comments = this.comments.filter((x: any) => x._id != id);
     this.commentForm.patchValue({ comment: this.commentToEdit.content });
+
     this.commentAdded = false;
   }
 
@@ -123,20 +114,20 @@ export class TvShowDetailsComponent implements OnInit {
     this.commentForm.patchValue({ comment: '' });
     this.commentAdded = false;
   }
-  unsaveTVShow() {
+  unsaveShow() {
     const lsLib = localStorage.getItem('library');
     const library = lsLib !== null ? JSON.parse(lsLib) : '';
     console.log(library);
 
-    const tvShowsToResave = library.savedTVShows.filter(
-      (x: any) => x._id !== this.tvShowId
+    const showsToResave = library.savedShows.filter(
+      (x: any) => x._id !== this.showId
     );
-    console.log(this.tvShowId);
+    console.log(this.showId);
 
-    console.log(tvShowsToResave);
+    console.log(showsToResave);
 
     const libraryToResave = library;
-    libraryToResave.savedTVShows = tvShowsToResave;
+    libraryToResave.savedShows = showsToResave;
     localStorage.setItem('library', JSON.stringify(libraryToResave));
     this.apiService
       .removeFromUserLibrary(libraryToResave)
