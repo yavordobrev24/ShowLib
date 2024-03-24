@@ -1,9 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environment.development';
+
 import { UserService } from './user/user.service';
 
-const { apiUrl } = environment;
 @Injectable({
   providedIn: 'root',
 })
@@ -103,4 +102,12 @@ export class ApiService {
       },
     });
   }
+  // getAllShows() {
+  //   return this.http.get('/api/data/shows');
+  // }
+  // performSearch(searchValue: string) {
+  //   this.getAllShows().subscribe((x: any) => {
+  //     return x.find((y: any) => y.title === searchValue);
+  //   });
+  // }
 }

@@ -14,4 +14,9 @@ export class HeaderComponent {
   logout() {
     this.userService.logout();
   }
+  onSearch(searchValue: string) {
+    console.log(searchValue);
+
+    return;
+  }
 }

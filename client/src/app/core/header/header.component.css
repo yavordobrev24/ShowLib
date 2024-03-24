@@ -12,6 +12,25 @@ header .logo {
   font-size: 2em;
   font-weight: bolder;
 }
+header .search-bar {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border-radius: 30px;
+}
+header .search-bar input {
+  border: none;
+  outline: none;
+  width: 40ch;
+}
+header .search-bar mat-icon {
+  color: black;
+  cursor: pointer;
+}
+header .search-bar mat-icon:hover {
+  color: rgb(75, 72, 72);
+}
 header nav > ul {
   display: flex;
   gap: 1em;
