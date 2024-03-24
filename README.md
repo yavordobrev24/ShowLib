@@ -1,13 +1,12 @@
 ## ShowLib
 
-ShowLib is an application designed to manage your movie library, allowing you to save information about movies you've watched, plan to watch, or want to revisit. It goes beyond a simple list by enabling you to write reviews and comments to create a personalized library reflecting your movie tastes and experiences. ➕
+ShowLib is an application designed to manage your movie and tv show library, allowing you to save information about watched, planned to watch, or want to revisit. It goes beyond a simple list by enabling you to write comments and to create a personalized library reflecting your show tastes and experiences. ➕
 
 ### Features
 
-- **Movie Library:** Store movies with details like title, director, cast, and genre. ️✨
-- **Review System:** Write reviews for movies you've watched, expressing your thoughts and opinions.
+- **Movie and TV Show Library:** Store shows using an easy interface. ️✨
 - **Comments:** Add comments to specific movies to capture personal notes, trivia, or memories associated with them.
-- **Organization:** Categorize movies using a system that works for you (e.g., by genre, release date, rating). ⭐
+- **Organization:** Categorize movies using a system that works for you (e.g., by genre, release date). ⭐
 
 ### Getting Started
 
