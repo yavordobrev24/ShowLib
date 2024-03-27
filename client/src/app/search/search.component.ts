@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import { Show } from '../types';
 
 @Component({
   selector: 'app-search',
@@ -9,13 +10,13 @@ import { ApiService } from '../api.service';
 })
 export class SearchComponent implements OnInit {
   searchValue: string | undefined;
-  shows: any;
+  shows: Show[] | undefined;
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.searchValue = params['searchValue'];
       if (this.searchValue == '') {
-        this.apiService.getAllShows().subscribe((shows) => {
+        this.apiService.getAllShows().subscribe((shows: any) => {
           this.shows = shows;
         });
       } else {

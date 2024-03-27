@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user/user.service';
+import { Comment } from '../types';
 
 @Component({
   selector: 'app-details',
@@ -14,13 +15,13 @@ export class DetailsComponent implements OnInit {
     comment: new FormControl(''),
   });
   show: any;
-  comments: any;
+  comments: Comment[] = [];
   showId: string | null = null;
   commentAdded: boolean | undefined;
-  userId: any;
-  hasSaved: any;
+  userId: string | undefined;
+  hasSaved: boolean = false;
   commentToEdit: any;
-  isLogged: any;
+  isLogged: boolean = false;
 
   constructor(
     private apiService: ApiService,
@@ -36,7 +37,7 @@ export class DetailsComponent implements OnInit {
       this.showId = params['id'];
     });
     if (this.isLogged) {
-      this.userId = this.userService.user._id;
+      this.userId = this.userService.user?._id;
     }
     this.apiService
       .getShowById(this.showId)
@@ -77,7 +78,7 @@ export class DetailsComponent implements OnInit {
     if (!this.commentToEdit) {
       this.apiService
         .addComment(this.showId, comment)
-        .subscribe((x) => this.comments.push(x));
+        .subscribe((x: any) => this.comments.push(x));
       this.commentAdded = true;
     } else {
       this.commentToEdit.content = comment;

@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 
 import { UserService } from './user/user.service';
 import { Observable, map } from 'rxjs';
+import { Library, Show } from './types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  searchValue: any;
+  searchValue: string | undefined;
   constructor(private http: HttpClient, private userService: UserService) {}
   getAllShows() {
     return this.http.get('/api/data/shows');
@@ -16,7 +17,7 @@ export class ApiService {
   getMoviesOrTVShows(type: string) {
     return this.getAllShows().pipe(
       map((shows: any) => {
-        return shows.filter((show: any) => show.type == type);
+        return shows.filter((show: Show) => show.type == type);
       })
     );
   }
@@ -29,7 +30,7 @@ export class ApiService {
   getAllLibraries() {
     return this.http.get('/api/data/libraries', {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
@@ -40,32 +41,32 @@ export class ApiService {
     };
     return this.http.post('/api/data/libraries', data, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
   }
-  saveToUserLibrary(lib: any) {
+  saveToUserLibrary(lib: Library) {
     const data = {
       savedShows: lib.savedShows,
-      _ownerId: this.userService.user._id,
+      _ownerId: this.userService.user!._id,
     };
     return this.http.put(`/api/data/libraries/${lib._id}`, data, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
   }
-  removeFromUserLibrary(lib: any) {
+  removeFromUserLibrary(lib: Library) {
     const data = {
       savedShows: lib.savedShows,
-      _ownerId: this.userService.user._id,
+      _ownerId: this.userService.user!._id,
     };
 
     return this.http.put(`/api/data/libraries/${lib._id}`, data, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
@@ -76,12 +77,12 @@ export class ApiService {
     const data = {
       showId: id,
       content: comment,
-      username: this.userService.user.username,
+      username: this.userService.user!.username,
     };
 
     return this.http.post('/api/data/comments', data, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
@@ -89,7 +90,7 @@ export class ApiService {
   deleteComment(id: string) {
     return this.http.delete(`/api/data/comments/${id}`, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });
@@ -97,7 +98,7 @@ export class ApiService {
   editComment(data: any) {
     return this.http.put(`/api/data/comments/${data._id}`, data, {
       headers: {
-        'X-Authorization': this.userService.user.accessToken,
+        'X-Authorization': this.userService.user!.accessToken,
         'Content-Type': 'application/json',
       },
     });

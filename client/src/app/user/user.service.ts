@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Library, User } from '../types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  library: any;
-  user: any;
+  library: Library | undefined;
+  user: User | undefined;
   USER_KEY = 'user';
   LIB_KEY = 'library';
   get isLogged(): boolean {

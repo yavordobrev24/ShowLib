@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ApiService } from '../api.service'; // Replace with your actual API service import
+import { ApiService } from '../api.service';
+import { Show } from '../types';
 
 @Component({
   selector: 'app-discover',
@@ -12,7 +13,7 @@ export class DiscoverComponent implements OnInit {
     selectedType: new FormControl('both'),
   });
   selectedType: any = '';
-  shows: any;
+  shows!: Show[];
 
   constructor(private apiService: ApiService) {}
 
@@ -26,7 +27,7 @@ export class DiscoverComponent implements OnInit {
         if (this.selectedType == 'movie' || this.selectedType == 'tvShow') {
           this.apiService
             .getMoviesOrTVShows(this.selectedType)
-            .subscribe((shows: any) => {
+            .subscribe((shows: Show[]) => {
               this.shows = shows;
             });
         } else {

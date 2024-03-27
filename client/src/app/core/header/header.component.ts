@@ -9,7 +9,7 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  searchValue: any;
+  searchValue: string | undefined;
   constructor(
     private userService: UserService,
     private apiService: ApiService,
