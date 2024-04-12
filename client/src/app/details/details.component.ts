@@ -3,7 +3,7 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user/user.service';
-import { Comment } from '../types';
+import { Comment, Show } from '../types';
 
 @Component({
   selector: 'app-details',
@@ -14,13 +14,13 @@ export class DetailsComponent implements OnInit {
   commentForm = new FormGroup({
     comment: new FormControl(''),
   });
-  show: any;
+  show: Show | undefined;
   comments: Comment[] = [];
   showId: string | null = null;
   commentAdded: boolean | undefined;
   userId: string | undefined;
   hasSaved: boolean = false;
-  commentToEdit: any;
+  commentToEdit: Comment | undefined;
   isLogged: boolean = false;
 
   constructor(
@@ -84,7 +84,6 @@ export class DetailsComponent implements OnInit {
       this.commentToEdit.content = comment;
       this.comments.push(this.commentToEdit);
       this.apiService.editComment(this.commentToEdit).subscribe((x) => x);
-      this.commentToEdit = false;
       this.commentAdded = true;
     }
   }
@@ -102,15 +101,15 @@ export class DetailsComponent implements OnInit {
   }
 
   editComment(id: string) {
-    this.commentToEdit = this.comments.find((x: any) => x._id == id);
-    this.comments = this.comments.filter((x: any) => x._id != id);
-    this.commentForm.patchValue({ comment: this.commentToEdit.content });
+    this.commentToEdit = this.comments.find((x: Comment) => x._id == id);
+    this.comments = this.comments.filter((x: Comment) => x._id != id);
+    this.commentForm.patchValue({ comment: this.commentToEdit?.content });
 
     this.commentAdded = false;
   }
 
   deleteComment(id: string) {
-    this.comments = this.comments.filter((x: any) => x._id != id);
+    this.comments = this.comments.filter((x: Comment) => x._id != id);
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
     this.commentForm.patchValue({ comment: '' });
     this.commentAdded = false;

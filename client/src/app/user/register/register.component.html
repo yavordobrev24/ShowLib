@@ -7,15 +7,15 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput name="email" ngModel required />
+      <input matInput name="email" ngModel required email />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput name="password" ngModel required />
+      <input matInput type="password" name="password" ngModel required />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Repeat Password</mat-label>
-      <input matInput name="rePassword" ngModel required />
+      <input matInput type="password" name="rePassword" ngModel required />
     </mat-form-field>
     <p class="error" *ngIf="error">{{ error }}</p>
     <button mat-button>Submit</button>
