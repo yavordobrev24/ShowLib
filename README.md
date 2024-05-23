@@ -1,15 +1,19 @@
 ## ShowLib
 
-ShowLib is an application designed to manage your movie and tv show library, allowing you to save information about watched, planned to watch, or want to revisit. It goes beyond a simple list by enabling you to write comments and to create a personalized library reflecting your show tastes and experiences. ➕
+SPA designed to manage your movie and tv show library, allowing you to save information about watched, planned to watch, or want to revisit. Built using Angularv16 and Angular Material.
 
-### Features
+### Usage
 
-- **Movie and TV Show Library:** Store shows using an easy interface. ️✨
-- **Comments:** Add comments to specific movies to capture personal notes, trivia, or memories associated with them.
-- **Organization:** Categorize movies using a system that works for you (e.g., by genre, release date). ⭐
+ 1. Store shows using an easy interface. ️
+ 2. Add comments to specific movies.
+ 3. Categorize movies.
 
-### Getting Started
+### How to run
 
+### Prerequisites
+
+- Ensure [Node.js](https://nodejs.org/) is installed on your system.
+  
 1. **Clone the Repository:**
 
    ```bash
