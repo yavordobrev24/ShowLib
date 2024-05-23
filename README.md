@@ -2,13 +2,13 @@
 
 SPA designed to manage your movie and tv show library, allowing you to save information about watched, planned to watch, or want to revisit. Built using Angularv16 and Angular Material.
 
-### Usage
+## Usage
 
  1. Store shows using an easy interface. ️
  2. Add comments to specific movies.
  3. Categorize movies.
 
-### How to run
+## How to run
 
 ### Prerequisites
 
