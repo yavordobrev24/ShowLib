@@ -1,0 +1,19 @@
+<div class="popular">
+  <div class="popular-header">
+    <p class="title">Popular - Movie</p>
+    <a routerLink="/discover" class="see-all-button"
+      >See All <mat-icon>arrow_forward_ios</mat-icon></a
+    >
+  </div>
+
+  <ul class="card-list">
+    <li
+      class="card-item"
+      *ngFor="let show of shows"
+      [routerLink]="['/details', show._id]"
+    >
+      <img class="card-item-img" [src]="show.img" alt="{{ show.title }}" />
+      <p class="card-item-text">{{ show.title }}</p>
+    </li>
+  </ul>
+</div>
