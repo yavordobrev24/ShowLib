@@ -1,23 +1,28 @@
-<div class="register">
-  <h2>Register</h2>
-  <form #registerForm="ngForm" (submit)="register(registerForm)">
-    <mat-form-field>
+<div class="auth">
+  <h2 class="auth-title">Register</h2>
+  <form
+    class="auth-form"
+    #registerForm="ngForm"
+    (submit)="register(registerForm)"
+  >
+    <mat-form-field class="auth-field">
       <mat-label>Username</mat-label>
       <input matInput name="username" ngModel required />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="auth-field">
       <mat-label>Email</mat-label>
       <input matInput name="email" ngModel required email />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="auth-field">
       <mat-label>Password</mat-label>
       <input matInput type="password" name="password" ngModel required />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="auth-field">
       <mat-label>Repeat Password</mat-label>
       <input matInput type="password" name="rePassword" ngModel required />
     </mat-form-field>
-    <p class="error" *ngIf="error">{{ error }}</p>
-    <button mat-button>Submit</button>
+
+    <button mat-button class="auth-button">Submit</button>
   </form>
+  <p class="auth-error" *ngIf="error">{{ error }}</p>
 </div>
