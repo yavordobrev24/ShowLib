@@ -1,7 +1,8 @@
 <div class="details">
-  <div class="content">
-    <div class="trailer">
+  <div class="details-content">
+    <div class="details-trailer">
       <iframe
+        class="details-trailer-video"
         [src]="show?.video | safe"
         [title]="show?.title"
         frameborder="0"
@@ -9,59 +10,76 @@
         allowfullscreen
       ></iframe>
     </div>
-    <div class="info">
-      <div class="img">
-        <img [src]="show?.img" [alt]="show?.title" />
-        <mat-icon
+    <div class="details-info-overlay">
+      <div class="details-info">
+        <img class="details-info-img" [src]="show?.img" [alt]="show?.title" />
+
+        <h2 class="details-info-title">{{ show?.title }}</h2>
+        <p class="details-info-text">{{ show?.description }}</p>
+
+        <button
+          mat-button
+          class="button"
           *ngIf="hasSaved == false && isLogged"
           (click)="saveShow()"
-          class="save"
-          matTooltip="Save"
-          >bookmark_outline</mat-icon
         >
-        <mat-icon
+          Save
+        </button>
+        <button
+          mat-button
           *ngIf="hasSaved == true && isLogged"
-          class="unsave"
-          matTooltip="Unsave"
+          class="button"
           (click)="unsaveShow()"
-          >bookmark</mat-icon
         >
+          Unsave
+        </button>
       </div>
-
-      <h2>{{ show?.title }}</h2>
-      <p>{{ show?.description }}</p>
-      <mat-chip class="chip">
-        {{ show?.type }}
-      </mat-chip>
     </div>
   </div>
-  <div class="add-comment" *ngIf="commentAdded == false && isLogged">
-    <form [formGroup]="commentForm" (ngSubmit)="addComment()">
-      <h3>Add comment</h3>
-      <textarea
-        name="comment"
-        formControlName="comment"
-        minlength="3"
-        maxlength="60"
-      ></textarea>
-      <button mat-button>Send comment</button>
+
+  <div class="details-add" *ngIf="commentAdded == false && isLogged">
+    <form
+      class="details-form"
+      [formGroup]="commentForm"
+      (ngSubmit)="addComment()"
+    >
+      <div class="details-form-controls">
+        <textarea
+          class="details-form-textarea"
+          name="comment"
+          placeholder="Leave a comment"
+          formControlName="comment"
+          minlength="5"
+          maxlength="100c"
+        ></textarea>
+        <button mat-button class="details-form-button">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
     </form>
   </div>
-  <div class="comments">
-    <h3>Comments</h3>
-    <ul *ngIf="comments.length > 0">
-      <li *ngFor="let comment of comments" class="comment">
-        <p class="user">
+  <div class="details-comments">
+    <p class="title">Comments</p>
+    <ul class="details-comments-list" *ngIf="comments.length > 0">
+      <li *ngFor="let comment of comments" class="details-comments-item">
+        <p class="details-item-user">
           {{ comment?.username }}
         </p>
-        <p class="text">{{ comment?.content }}</p>
+        <p class="details-item-text">{{ comment?.content }}</p>
 
-        <div class="btns" *ngIf="comment._ownerId == userId">
-          <mat-icon (click)="editComment(comment._id)">edit</mat-icon>
-          <mat-icon (click)="deleteComment(comment._id)">delete</mat-icon>
+        <div class="details-item-buttons" *ngIf="comment._ownerId == userId">
+          <mat-icon class="details-item-icon" (click)="editComment(comment._id)"
+            >edit</mat-icon
+          >
+          <mat-icon
+            class="details-item-icon"
+            (click)="deleteComment(comment._id)"
+            >delete</mat-icon
+          >
         </div>
       </li>
     </ul>
-    <p *ngIf="comments?.length == 0">No comments yet.</p>
+
+    <p class="none" *ngIf="comments?.length == 0">No comments yet.</p>
   </div>
 </div>
