@@ -7,6 +7,7 @@ import { UserService } from 'src/app/user/user.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  
 })
 export class HeaderComponent {
   searchValue: string | undefined;

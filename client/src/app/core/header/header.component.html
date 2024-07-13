@@ -6,7 +6,7 @@
       search
     </mat-icon>
   </div>
-  <nav>
+  <nav class="desktop-nav">
     <ul class="nav-menu">
       <li class="nav-item">
         <a routerLink="/home"><mat-icon>home</mat-icon></a>
@@ -35,5 +35,42 @@
         </div>
       </li>
     </ul>
+  </nav>
+  <nav class="mobile-nav">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <li class="dropdown-item">
+          <a routerLink="/">Home</a>
+        </li>
+      </button>
+      <button mat-menu-item>
+        <li class="dropdown-item">
+          <a routerLink="/discover">Discover</a>
+        </li>
+      </button>
+      <button mat-menu-item *ngIf="!isLoggedIn">
+        <li class="dropdown-item">
+          <a routerLink="/login">Login</a>
+        </li>
+      </button>
+      <button mat-menu-item *ngIf="!isLoggedIn">
+        <li class="dropdown-item">
+          <a routerLink="/register">Register</a>
+        </li>
+      </button>
+      <button mat-menu-item *ngIf="isLoggedIn">
+        <li class="dropdown-item">
+          <a routerLink="/library">Library</a>
+        </li>
+      </button>
+      <button mat-menu-item *ngIf="isLoggedIn">
+        <li class="dropdown-item">
+          <a (click)="logout()">Logout</a>
+        </li>
+      </button>
+    </mat-menu>
   </nav>
 </header>
