@@ -8,8 +8,6 @@ import { CoreModule } from './core/core.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { MoviesListComponent } from './movies-list/movies-list.component';
-import { TvShowsListComponent } from './tv-shows-list/tv-shows-list.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserModule } from './user/user.module';
@@ -24,14 +22,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { DiscoverComponent } from './discover/discover.component';
 import { SearchComponent } from './search/search.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { PopularComponent } from './popular/popular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    MoviesListComponent,
-    TvShowsListComponent,
+    PopularComponent,
     DiscoverComponent,
     DetailsComponent,
     SafePipe,
