@@ -1,5 +1,5 @@
 <div class="library">
-  <p class="lib">Library</p>
+  <p class="title">Library</p>
   <form [formGroup]="findForm">
     <mat-form-field>
       <mat-label>Choose type</mat-label>
@@ -10,10 +10,14 @@
       </mat-select>
     </mat-form-field>
   </form>
-  <ul>
-    <li *ngFor="let show of shows" [routerLink]="['/details', show?._id]">
-      <img [src]="show.img" alt="{{ show.title }}" />
-      <p>{{ show.title }}</p>
+  <ul class="card-list">
+    <li
+      class="card-item"
+      *ngFor="let show of shows"
+      [routerLink]="['/details', show?._id]"
+    >
+      <img class="card-item-img" [src]="show.img" alt="{{ show.title }}" />
+      <p class="card-item-text">{{ show.title }}</p>
     </li>
   </ul>
   <p class="none" *ngIf="shows?.length == 0">There aren't any saved shows.</p>
