@@ -1,9 +1,8 @@
 .home {
-  max-width: 1200px;
   margin: 0 auto;
 }
 
-.home > p {
+.home-title {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
