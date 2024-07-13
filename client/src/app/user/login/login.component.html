@@ -1,15 +1,16 @@
-<div class="login">
-  <h2>Login</h2>
-  <form #loginForm="ngForm" (submit)="login(loginForm)">
-    <mat-form-field>
+<div class="auth">
+  <h2 class="auth-title">Login</h2>
+  <form class="auth-form" #loginForm="ngForm" (submit)="login(loginForm)">
+    <mat-form-field class="auth-field">
       <mat-label>Email</mat-label>
       <input matInput name="email" ngModel required email />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="auth-field">
       <mat-label>Password</mat-label>
       <input matInput name="password" type="password" ngModel required />
     </mat-form-field>
-    <p *ngIf="error" class="error">{{ error }}</p>
-    <button mat-button>Submit</button>
+
+    <button mat-button class="auth-button">Submit</button>
   </form>
+  <p *ngIf="error" class="auth-error">{{ error }}</p>
 </div>
