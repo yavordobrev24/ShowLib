@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/types/user';
+
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent {
   ) {}
   register(form: NgForm) {
     if (form.invalid) {
-      this.error = 'Email and password required!';
+      this.error = 'All fields required!';
       return;
     }
     const { username, email, password, rePassword } = form.value;
