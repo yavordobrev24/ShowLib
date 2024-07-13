@@ -7,9 +7,20 @@ html {
   font: 18px/1 Verdana, sans-serif;
 }
 body {
-  background: white;
+  padding: 0 2em 2em;
+  background: linear-gradient(
+    45deg,
+    rgba(5, 2, 48, 1) 0%,
+    rgba(40, 22, 57, 1) 100%
+  );
   min-height: 100vh;
-  color: black;
+  color: white;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+input,
+textarea {
+  font: inherit;
 }
 ul {
   list-style-type: none;
@@ -22,5 +33,74 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  border: inherit;
+}
+.title {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+.none {
+  color: #999;
+}
+
+.card-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.card-item {
+  width: 10em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.card-item:hover .card-item-img {
+  transform: scale(1.03);
+}
+.card-item-img {
+  border-radius: inherit;
+  height: 12em;
+  transition: transform 0.3s;
+}
+.card-item-text {
+  padding: 1em;
+  text-align: center;
+}
+
+.see-all-button {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  transition: 0.3s background-color;
+  border-radius: 30px;
+}
+.see-all-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-title {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  min-width: 260px;
+  width: 30%;
+}
+.auth-field {
+  width: 100%;
+}
+
+.auth-error {
+  margin-top: 0.5em;
+  color: #f44336;
 }
