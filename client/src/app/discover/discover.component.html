@@ -1,19 +1,25 @@
 <div class="discover">
-  <p>Discover</p>
-  <form [formGroup]="discoverForm">
-    <mat-form-field>
-      <mat-label>Choose type</mat-label>
-      <mat-select formControlName="selectedType" name="food">
-        <mat-option value="movie">Movies</mat-option>
-        <mat-option value="tvShow">TV Shows</mat-option>
-        <mat-option value="both">Both</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
-  <ul>
-    <li *ngFor="let show of shows" [routerLink]="['/details', show?._id]">
-      <img [src]="show.img" alt="{{ show.title }}" />
-      <p>{{ show.title }}</p>
+  <div class="discover-header">
+    <p class="title">Discover</p>
+    <form [formGroup]="discoverForm">
+      <mat-form-field>
+        <mat-label>Choose type</mat-label>
+        <mat-select formControlName="selectedType" name="food">
+          <mat-option value="movie">Movies</mat-option>
+          <mat-option value="tvShow">TV Shows</mat-option>
+          <mat-option value="both">Both</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <ul class="card-list">
+    <li
+      class="card-item"
+      *ngFor="let show of shows"
+      [routerLink]="['/details', show?._id]"
+    >
+      <img class="card-item-img" [src]="show.img" alt="{{ show.title }}" />
+      <p class="card-item-text">{{ show.title }}</p>
     </li>
   </ul>
 </div>
