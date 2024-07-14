@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
-import { Show } from '../types';
+import { Show } from 'src/types/show';
 
 @Component({
   selector: 'app-search',

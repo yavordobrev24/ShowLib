@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Library, User } from '../types';
+import { Library } from 'src/types/library';
+import { User } from 'src/types/user';
 
 @Injectable({
   providedIn: 'root',

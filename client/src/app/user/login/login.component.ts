@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { Library } from 'src/app/types';
+import { Library } from 'src/types/library';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,6 @@ export class LoginComponent {
         localStorage.setItem('user', JSON.stringify(x));
         this.apiService.getAllLibraries().subscribe((p: any) => {
           const userLibrary = p.find((y: Library) => y._ownerId == x._id);
-          console.log(userLibrary);
 
           localStorage.setItem('library', JSON.stringify(userLibrary));
         });

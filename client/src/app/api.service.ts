@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { UserService } from './user/user.service';
 import { Observable, map } from 'rxjs';
-import { Library, Show } from './types';
+import { Library } from 'src/types/library';
+import { Show } from 'src/types/show';
 
 @Injectable({
   providedIn: 'root',

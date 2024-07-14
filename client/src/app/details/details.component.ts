@@ -3,7 +3,8 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user/user.service';
-import { Comment, Show } from '../types';
+import { Show } from 'src/types/show';
+import { Comment } from 'src/types/comment';
 
 @Component({
   selector: 'app-details',

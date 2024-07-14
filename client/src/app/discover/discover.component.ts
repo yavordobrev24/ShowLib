@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from '../api.service';
-import { Show } from '../types';
+import { Show } from 'src/types/show';
 
 @Component({
   selector: 'app-discover',

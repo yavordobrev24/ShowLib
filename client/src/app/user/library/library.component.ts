@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Library } from 'src/types/library';
+import { Show } from 'src/types/show';
 
-import { Library, Show } from 'src/app/types';
 @Component({
   selector: 'app-library',
   templateUrl: './library.component.html',
