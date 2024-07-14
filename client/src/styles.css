@@ -34,6 +34,19 @@ img {
   height: auto;
   display: block;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(40, 22, 57, 0.9) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .title {
   font-size: 1.4em;
   margin-bottom: 0.5em;
@@ -103,4 +116,40 @@ img {
 .auth-error {
   margin-top: 0.5em;
   color: #f44336;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+.mat-mdc-select {
+  color: inherit !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label,
+.mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-floating-label--float-above {
+  color: inherit !important;
+}
+.mat-mdc-select-arrow {
+  color: inherit !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #fff !important;
+}
+div.mat-mdc-select-panel {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+.mat-mdc-option {
+  color: #fff !important;
+}
+.mat-mdc-menu-panel {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+.mat-mdc-menu-item {
+  color: #fff !important;
+}
+.dropdown-item[_ngcontent-ng-c1740050044] {
+  background-color: transparent !important;
 }
