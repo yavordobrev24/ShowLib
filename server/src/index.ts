@@ -1,14 +1,18 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import { AppDataSource } from './data-source'
+import 'dotenv/config'
 
-import dotenv from 'dotenv'
-import cors from 'cors'
-dotenv.config()
-const PORT = process.env.PORT
+const { PORT } = process.env
 const app = express()
 
-app.use(cors())
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Data Source has been initialized!')
+  })
+  .catch((err) => {
+    console.error('Error during Data Source initialization:', err)
+  })
+
 app.use(express.json())
 
-app.listen(PORT, () => {
-  console.log('Server is running on', PORT)
-})
+app.listen(PORT || 3000)
