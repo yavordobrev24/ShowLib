@@ -41,6 +41,49 @@ export const login = async (req: Request, res: Response) => {
 
 export const register = async (req: Request, res: Response) => {
   const { email, username, password } = req.body
+
+  try {
+    const existingUser = await userRepository.findOne({
+      where: [
+        {
+          email,
+        },
+        {
+          username,
+        },
+      ],
+    })
+
+    if (existingUser) {
+      return res.status(409).send('Account already exists')
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    const newUser = userRepository.create({
+      email,
+      username,
+      password: hashedPassword,
+    })
+    const results = await userRepository.save(newUser)
+
+    const accessToken = jwt.sign(
+      { id: results.id, email: results.email, username: results.username },
+      JWT_SECRET as string,
+      { expiresIn: '30m' }
+    )
+
+    res.cookie('accessToken', accessToken, { httpOnly: true })
+    res.send({
+      id: results.id,
+      email: results.email,
+      username: results.username,
+    })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 }
+
 export const logout = async (req: Request, res: Response) => {
 }
