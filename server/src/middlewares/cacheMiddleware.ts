@@ -1,18 +1,15 @@
 import { NextFunction, Request, Response } from 'express'
 import NodeCache from 'node-cache'
 
-const cache = new NodeCache()
+const cache = new NodeCache({ checkperiod: 60 * 60 * 24, maxKeys: 100 })
 
-export const cacheMiddleware = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const cacheMiddleware = (req: Request, res: Response, next: NextFunction) => {
   if (req.method !== 'GET') {
     console.log('Cannot cache non-GET methods')
     return next()
   }
   const key = req.originalUrl
+
   const cachedRes = cache.get(key)
   if (cachedRes) {
     console.log('Cache Hit!')
@@ -28,3 +25,4 @@ export const cacheMiddleware = (
     next()
   }
 }
+export default cacheMiddleware
