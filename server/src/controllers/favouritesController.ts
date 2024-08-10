@@ -39,3 +39,35 @@ export const deleteFavourite = async (req: Request, res: Response) => {
     res.status(500).send('Internal Server Error')
   }
 }
+export const getFavourite = async (req: Request, res: Response) => {
+  const media_id = parseInt(req.query.media_id as string)
+  const media_type = req.query.media_type as string
+  const user_id = parseInt(req.query.user_id as string)
+  const media_title = parseInt(req.query.media_id as string)
+  const media_poster = req.query.media_type as string
+
+  try {
+    let results = undefined
+    if (media_id) {
+      results = await favouriteRepository.findOneBy({
+        media_id,
+        media_type,
+        user_id,
+      })
+    } else {
+      results = await favouriteRepository.find({
+        where: [
+          {
+            media_type,
+            user_id,
+          },
+        ],
+      })
+    }
+
+    res.json(results)
+  } catch (error) {
+    console.error('Error fetching trending movies:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
