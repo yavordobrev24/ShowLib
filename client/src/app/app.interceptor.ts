@@ -8,7 +8,8 @@ import {
 import { Provider } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment.development';
-const { apiUrl } = environment;
+const { API_URL } = environment;
+
 export class AppInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
@@ -16,7 +17,7 @@ export class AppInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (req.url.startsWith('/api')) {
       req = req.clone({
-        url: req.url.replace('/api', apiUrl),
+        url: req.url.replace('/api', API_URL),
         withCredentials: true,
       });
     }
