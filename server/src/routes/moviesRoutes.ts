@@ -13,4 +13,6 @@ const router = Router()
 router.get('/', cacheMiddleware, getMovies)
 router.get('/popular', cacheMiddleware, getPopularMovies)
 router.get('/:id', cacheMiddleware, getMovieById)
+router.get('/:id/comments', getMovieComments)
+
 export default router
