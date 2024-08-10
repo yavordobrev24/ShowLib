@@ -9,4 +9,8 @@ import cacheMiddleware from '../middlewares/cacheMiddleware'
 import { getMovieComments } from '../controllers/commentsController'
 
 const router = Router()
+
+router.get('/', cacheMiddleware, getMovies)
+router.get('/popular', cacheMiddleware, getPopularMovies)
+router.get('/:id', cacheMiddleware, getMovieById)
 export default router
