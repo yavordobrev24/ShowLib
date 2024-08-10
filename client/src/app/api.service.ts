@@ -33,6 +33,11 @@ export class ApiService {
       })
     );
   }
+
+  getPopularShows(type: 'movies' | 'tv-shows'): Observable<Show[]> {
+    return this.http.get<Show[]>(`/api/${type}/popular`).pipe(
+      catchError((error) => {
+        return throwError(() => new Error('Error fetching popular data'));
       })
     );
   }
