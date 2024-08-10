@@ -21,10 +21,6 @@ export class ApiService {
   searchValue: string | undefined;
   constructor(private http: HttpClient, private userService: UserService) {}
   }
-  getMoviesOrTVShows(type: string) {
-    return this.getAllShows().pipe(
-      map((shows: any) => {
-        return shows.filter((show: Show) => show.type == type);
       })
     );
   }
