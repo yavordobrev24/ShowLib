@@ -23,3 +23,22 @@ export const getTVShows = async (req: Request, res: Response) => {
     res.status(500).send('Internal Server Error')
   }
 }
+
+export const getPopularTVShows = async (req: Request, res: Response) => {
+  const { page } = req.query
+  const pageNumber = Number(page) || 1
+
+  try {
+    let data = await fetchFromTMDB(`3/tv/popular?page=${pageNumber}`)
+    data.results = data.results.map((result: any) => {
+      return {
+        ...result,
+        type: 'tv-show',
+      }
+    })
+    res.json(data)
+  } catch (error) {
+    console.error('Error fetching trending TV shows:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
