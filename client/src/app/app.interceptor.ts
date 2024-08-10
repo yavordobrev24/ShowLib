@@ -7,7 +7,8 @@ import {
 } from '@angular/common/http';
 import { Provider } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environment.development';
+import { environment } from 'src/environment';
+
 const { API_URL } = environment;
 
 export class AppInterceptor implements HttpInterceptor {
