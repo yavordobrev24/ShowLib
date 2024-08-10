@@ -66,6 +66,10 @@ export class ApiService {
       `/api/favourites?media_type=${type}&user_id=${userId}`
     );
   }
+  getFavourite(favourite: any) {
+    return this.http.get(
+      `/api/favourites?media_id=${favourite.media_id}&media_type=${favourite.media_type}&user_id=${favourite.user_id}&media_poster=${favourite.media_poster}&media_title=${favourite.media_title}`
+    );
   }
   }
   }
