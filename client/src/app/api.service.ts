@@ -30,21 +30,8 @@ export class ApiService {
   }
   }
   }
-  addComment(id: string | null, comment: string) {
-    console.log('API COMMENT ', comment);
-
-    const data = {
-      showId: id,
-      content: comment,
-      username: this.userService.user!.username,
-    };
-
-    return this.http.post('/api/data/comments', data, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
+  addComment(comment: any) {
+    return this.http.post('/api/comments', comment);
   }
   deleteComment(id: string) {
     return this.http.delete(`/api/data/comments/${id}`, {
