@@ -43,3 +43,15 @@ export const getPopularMovies = async (req: Request, res: Response) => {
     res.status(500).send('Internal Server Error')
   }
 }
+
+export const getMovieById = async (req: Request, res: Response) => {
+  const { id } = req.params
+
+  try {
+    const data = await fetchFromTMDB(`3/movie/${id}`)
+    res.json(data)
+  } catch (error) {
+    console.error('Error fetching movie details:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
