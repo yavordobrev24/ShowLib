@@ -74,6 +74,10 @@ export class ApiService {
   addFavourite(favourite: any) {
     return this.http.post('/api/favourites', favourite);
   }
+  deleteFavourite(favourite: any) {
+    return this.http.delete(
+      `/api/favourites?media_id=${favourite.media_id}&media_type=${favourite.media_type}&user_id=${favourite.user_id}`
+    );
   }
   addComment(comment: any) {
     return this.http.post('/api/comments', comment);
