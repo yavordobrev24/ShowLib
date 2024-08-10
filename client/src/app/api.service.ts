@@ -33,13 +33,8 @@ export class ApiService {
   addComment(comment: any) {
     return this.http.post('/api/comments', comment);
   }
-  deleteComment(id: string) {
-    return this.http.delete(`/api/data/comments/${id}`, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
+  deleteComment(id: number) {
+    return this.http.delete(`/api/comments/${id}`);
   }
   editComment(comment: any) {
     return this.http.put(`/api/comments/${comment.id}`, {
