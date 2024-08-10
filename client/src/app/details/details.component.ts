@@ -126,19 +126,6 @@ export class DetailsComponent implements OnInit {
       this.commentAdded = true;
     }
   }
-
-  saveShow() {
-    const lsLib = localStorage.getItem('library');
-    const library = lsLib !== null ? JSON.parse(lsLib) : '';
-    console.log(library);
-
-    library.savedShows.push(this.show);
-    localStorage.setItem('library', JSON.stringify(library));
-    this.apiService.saveToUserLibrary(library).subscribe((x) => console.log(x));
-
-    this.hasSaved = true;
-  }
-
   editComment(id: number) {
     this.commentToEdit = this.comments.find((x: Comment) => x.id == id);
     this.comments = this.comments.filter((x: Comment) => x.id != id);
