@@ -7,19 +7,33 @@
   >
     <mat-form-field class="auth-field">
       <mat-label>Username</mat-label>
-      <input matInput name="username" ngModel required />
+      <input matInput name="username" autocomplete="off" ngModel required />
     </mat-form-field>
     <mat-form-field class="auth-field">
       <mat-label>Email</mat-label>
-      <input matInput name="email" ngModel required email />
+      <input matInput name="email" autocomplete="off" ngModel required email />
     </mat-form-field>
     <mat-form-field class="auth-field">
       <mat-label>Password</mat-label>
-      <input matInput type="password" name="password" ngModel required />
+      <input
+        matInput
+        type="password"
+        autocomplete="off"
+        name="password"
+        ngModel
+        required
+      />
     </mat-form-field>
     <mat-form-field class="auth-field">
       <mat-label>Repeat Password</mat-label>
-      <input matInput type="password" name="rePassword" ngModel required />
+      <input
+        matInput
+        type="password"
+        autocomplete="off"
+        name="rePassword"
+        ngModel
+        required
+      />
     </mat-form-field>
 
     <button mat-button class="auth-button">Submit</button>
