@@ -53,3 +53,18 @@ export const deleteComment = async (req: Request, res: Response) => {
     res.status(500).send('Internal Server Error')
   }
 }
+
+export const getMovieComments = async (req: Request, res: Response) => {
+  const { id } = req.params
+
+  try {
+    const results = await commentRepository.find({
+      where: [{ media_id: Number(id), media_type: 'movies' }],
+    })
+
+    res.json(results)
+  } catch (error) {
+    console.error('Error fetching trending movies:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
