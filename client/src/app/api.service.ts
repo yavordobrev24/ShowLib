@@ -25,8 +25,6 @@ export class ApiService {
     );
   }
   }
-  getComments() {
-    return this.http.get('/api/data/comments');
   }
   getAllLibraries() {
     return this.http.get('/api/data/libraries', {
