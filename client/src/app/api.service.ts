@@ -20,6 +20,18 @@ import Show from 'src/types/show';
 export class ApiService {
   searchValue: string | undefined;
   constructor(private http: HttpClient, private userService: UserService) {}
+
+  getShows(
+    type: 'movies' | 'tv-shows',
+    page: number = 1,
+    query?: string
+  ): Observable<Show[]> {
+    const queryParams = query ? `query=${query}&page=${page}` : `page=${page}`;
+    return this.http.get<Show[]>(`/api/${type}?${queryParams}`).pipe(
+      catchError((error) => {
+        return throwError(() => new Error('Error fetching data'));
+      })
+    );
   }
       })
     );
