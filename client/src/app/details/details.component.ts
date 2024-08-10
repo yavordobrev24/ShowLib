@@ -139,11 +139,10 @@ export class DetailsComponent implements OnInit {
     this.hasSaved = true;
   }
 
-  editComment(id: string) {
-    this.commentToEdit = this.comments.find((x: Comment) => x._id == id);
-    this.comments = this.comments.filter((x: Comment) => x._id != id);
-    this.commentForm.patchValue({ comment: this.commentToEdit?.content });
-
+  editComment(id: number) {
+    this.commentToEdit = this.comments.find((x: Comment) => x.id == id);
+    this.comments = this.comments.filter((x: Comment) => x.id != id);
+    this.commentForm.patchValue({ content: this.commentToEdit?.content });
     this.commentAdded = false;
   }
 
