@@ -13,16 +13,18 @@ import Show from 'src/types/show';
 })
 export class DetailsComponent implements OnInit {
   commentForm = new FormGroup({
-    comment: new FormControl(''),
+    content: new FormControl(''),
   });
+  baseImageUrl: string = 'https://image.tmdb.org/t/p/original/';
   show: Show | undefined;
   comments: Comment[] = [];
-  showId: string | null = null;
+  showId!: number;
   commentAdded: boolean | undefined;
-  userId: string | undefined;
-  hasSaved: boolean = false;
+  userId: number | undefined;
+  isFavourite: boolean = false;
   commentToEdit: Comment | undefined;
   isLogged: boolean = false;
+  type!: 'movies' | 'tv-shows';
 
   constructor(
     private apiService: ApiService,
