@@ -98,19 +98,31 @@ export class DetailsComponent implements OnInit {
     if (this.commentForm.invalid) {
       return;
     }
-    console.log(this.commentForm.value);
-
-    const { comment }: any = this.commentForm.value;
+    const commentForm = this.commentForm.value;
+    let comment = {
+      content: commentForm.content,
+      user_id: this.userId,
+      user_name: this.userService.user?.username,
+      media_type: this.type,
+      media_id: this.showId,
+    };
 
     if (!this.commentToEdit) {
       this.apiService
-        .addComment(this.showId, comment)
+        .addComment(comment)
         .subscribe((x: any) => this.comments.push(x));
       this.commentAdded = true;
     } else {
-      this.commentToEdit.content = comment;
+      this.commentToEdit.content = commentForm.content as string;
       this.comments.push(this.commentToEdit);
-      this.apiService.editComment(this.commentToEdit).subscribe((x) => x);
+
+      this.apiService
+        .editComment({
+          ...comment,
+          content: this.commentToEdit.content,
+          id: this.commentToEdit.id,
+        })
+        .subscribe((x) => x);
       this.commentAdded = true;
     }
   }
