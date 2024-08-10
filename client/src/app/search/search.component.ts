@@ -70,5 +70,17 @@ export class SearchComponent implements OnInit {
     });
     this.loadShows(this.selectedType, this.currentPage);
   }
+
+  private loadShows(type: 'movies' | 'tv-shows', page: number): void {
+    this.apiService.getShows(type, page, this.searchValue).subscribe(
+      (response: any) => {
+        this.pages = response.total_pages;
+        this.shows = response.results;
+      },
+      (error) => {
+        console.error(`Error fetching ${type}:`, error);
+      }
+    );
+  }
   }
 }
