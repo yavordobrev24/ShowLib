@@ -26,13 +26,6 @@ export class ApiService {
   }
   }
   }
-  getAllLibraries() {
-    return this.http.get('/api/data/libraries', {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
   }
   createLibrary() {
     const data = {
