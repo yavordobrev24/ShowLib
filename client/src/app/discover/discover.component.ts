@@ -71,5 +71,14 @@ export class DiscoverComponent implements OnInit {
       }
     );
   }
+  handlePageEvent(pageEvent: PageEvent) {
+    window.scrollTo(0, 0);
+    this.currentPage = pageEvent.pageIndex + 1;
+    this.router.navigate(['/discover'], {
+      queryParams: {
+        selectedType: this.selectedType,
+        page: this.currentPage,
+      },
+    });
   }
 }
