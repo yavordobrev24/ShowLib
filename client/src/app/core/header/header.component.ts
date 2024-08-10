@@ -14,7 +14,14 @@ export class HeaderComponent {
   }
 
   logout() {
-    this.userService.logout();
+    this.userService.logout().subscribe({
+      next: () => {
+        console.log('Logout successful');
+      },
+      error: (error) => {
+        console.error('Logout failed', error);
+      },
+    });
   }
   onSearch(searchValue: string) {
     this.router.navigate(['/search/', searchValue]);
