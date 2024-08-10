@@ -1,16 +1,37 @@
-<div class="search">
-  <p class="title">Search</p>
+<div class="discover">
+  <div class="discover-header">
+    <p class="title">Search</p>
+    <form [formGroup]="searchForm">
+      <mat-form-field>
+        <mat-label>Choose type</mat-label>
+        <mat-select formControlName="selectedType">
+          <mat-option value="movies">Movies</mat-option>
+          <mat-option value="tv-shows">TV Shows</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
   <ul class="card-list">
     <li
       class="card-item"
       *ngFor="let show of shows"
-      [routerLink]="['/details', show?._id]"
+      [routerLink]="['/' + selectedType + '/' + show.id + '/details']"
     >
-      <img class="card-item-img" [src]="show.img" alt="{{ show.title }}" />
-      <p class="card-item-text">{{ show.title }}</p>
+      <img
+        class="card-item-img"
+        [src]="baseImageUrl + show.poster_path"
+        alt="{{ show.title || show.name }}"
+      />
+      <p class="card-item-text">{{ show.title || show.name }}</p>
     </li>
   </ul>
-  <p class="none" *ngIf="shows?.length == 0">
-    There isn't a show with that name.
-  </p>
+  <p class="none" *ngIf="shows?.length == 0">There are no shows.</p>
+  <mat-paginator
+    [length]="pages"
+    [pageSize]="1"
+    [pageIndex]="pages > currentPage ? currentPage - 1 : pages - 1"
+    (page)="handlePageEvent($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>
