@@ -27,16 +27,6 @@ export class ApiService {
   }
   }
   }
-  createLibrary() {
-    const data = {
-      savedShows: [],
-    };
-    return this.http.post('/api/data/libraries', data, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
   }
   saveToUserLibrary(lib: Library) {
     const data = {
