@@ -2,9 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { UserService } from './user/user.service';
-import { Observable, map } from 'rxjs';
-import { Library } from 'src/types/library';
-import { Show } from 'src/types/show';
+import {
+  Observable,
+  catchError,
+  forkJoin,
+  map,
+  merge,
+  tap,
+  throwError,
+  zip,
+} from 'rxjs';
+import Show from 'src/types/show';
 
 @Injectable({
   providedIn: 'root',
