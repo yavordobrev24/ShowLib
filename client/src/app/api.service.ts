@@ -61,6 +61,10 @@ export class ApiService {
       })
     );
   }
+  getUserFavourites(type: 'movies' | 'tv-shows', userId: number) {
+    return this.http.get(
+      `/api/favourites?media_type=${type}&user_id=${userId}`
+    );
   }
   }
   }
