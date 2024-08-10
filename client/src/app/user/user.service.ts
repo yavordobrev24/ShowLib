@@ -21,7 +21,7 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) {
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || '';
-      this.user = JSON.parse(lsUser);
+      this.user = lsUser ? JSON.parse(lsUser) : undefined;
     } catch (error) {
       this.user = undefined;
     }
