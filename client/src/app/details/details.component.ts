@@ -152,25 +152,4 @@ export class DetailsComponent implements OnInit {
     this.commentForm.patchValue({ content: '' });
     this.commentAdded = false;
   }
-  unsaveShow() {
-    const lsLib = localStorage.getItem('library');
-    const library = lsLib !== null ? JSON.parse(lsLib) : '';
-    console.log(library);
-
-    const showsToResave = library.savedShows.filter(
-      (x: any) => x._id !== this.showId
-    );
-    console.log(this.showId);
-
-    console.log(showsToResave);
-
-    const libraryToResave = library;
-    libraryToResave.savedShows = showsToResave;
-    localStorage.setItem('library', JSON.stringify(libraryToResave));
-    this.apiService
-      .removeFromUserLibrary(libraryToResave)
-      .subscribe((x) => console.log(x));
-
-    this.hasSaved = false;
-  }
 }
