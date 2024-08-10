@@ -68,7 +68,20 @@ export class DetailsComponent implements OnInit {
         }
       });
   }
+  addFavourite() {
+    const favourite = {
+      user_id: this.userId,
+      media_type: this.type,
+      media_id: this.showId,
+      media_poster: this.show?.poster_path || this.show?.backdrop_path,
+      media_title: this.show?.title || this.show?.name,
+    };
+    this.apiService.addFavourite(favourite).subscribe((x: any) => {
+      console.log(x);
+    });
 
+    this.isFavourite = true;
+  }
   addComment() {
     if (this.commentForm.invalid) {
       return;
