@@ -12,6 +12,9 @@ export class Comment {
   user_id!: number
 
   @Column()
+  user_name!: string
+
+  @Column()
   media_type!: string
 
   @Column()
