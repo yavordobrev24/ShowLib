@@ -22,3 +22,20 @@ export const addFavourite = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Internal server error' })
   }
 }
+
+export const deleteFavourite = async (req: Request, res: Response) => {
+  const media_id = parseInt(req.query.media_id as string)
+  const media_type = req.query.media_type as string
+  const user_id = parseInt(req.query.user_id as string)
+  try {
+    const results = await favouriteRepository.delete({
+      media_id,
+      media_type,
+      user_id,
+    })
+    res.json(results)
+  } catch (error) {
+    console.error('Error fetching trending movies:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
