@@ -1,8 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Library } from 'src/types/library';
-import { User } from 'src/types/user';
+import { EMPTY, Observable, of, throwError } from 'rxjs';
+import { catchError, finalize, tap } from 'rxjs/operators';
+import Favourite from 'src/types/favourite';
+import User from 'src/types/user';
 
 @Injectable({
   providedIn: 'root',
