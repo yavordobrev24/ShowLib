@@ -1,40 +1,29 @@
 <div class="details">
   <div class="details-content">
-    <div class="details-trailer">
-      <iframe
-        class="details-trailer-video"
-        [src]="show?.video | safe"
-        [title]="show?.title"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="details-info-overlay">
-      <div class="details-info">
-        <img class="details-info-img" [src]="show?.img" [alt]="show?.title" />
+    <img
+      class="details-content-image"
+      [src]="baseImageUrl + show?.backdrop_path"
+      [alt]="show?.title"
+    />
+    <h2 class="details-content-title">{{ show?.title || show?.name }}</h2>
+    <p class="details-content-text">{{ show?.overview }}</p>
 
-        <h2 class="details-info-title">{{ show?.title }}</h2>
-        <p class="details-info-text">{{ show?.description }}</p>
-
-        <button
-          mat-button
-          class="button"
-          *ngIf="hasSaved == false && isLogged"
-          (click)="saveShow()"
-        >
-          Save
-        </button>
-        <button
-          mat-button
-          *ngIf="hasSaved == true && isLogged"
-          class="button"
-          (click)="unsaveShow()"
-        >
-          Unsave
-        </button>
-      </div>
-    </div>
+    <button
+      mat-button
+      class="button"
+      *ngIf="isFavourite == false && isLogged"
+      (click)="addFavourite()"
+    >
+      Save
+    </button>
+    <button
+      mat-button
+      *ngIf="isFavourite == true && isLogged"
+      class="button"
+      (click)="deleteFavourite()"
+    >
+      Unsave
+    </button>
   </div>
 
   <div class="details-add" *ngIf="commentAdded == false && isLogged">
@@ -46,10 +35,9 @@
       <div class="details-form-controls">
         <textarea
           class="details-form-textarea"
-          name="comment"
+          name="content"
           placeholder="Leave a comment"
-          formControlName="comment"
-          minlength="5"
+          formControlName="content"
           maxlength="100"
           required
         ></textarea>
@@ -64,17 +52,17 @@
     <ul class="details-comments-list" *ngIf="comments.length > 0">
       <li *ngFor="let comment of comments" class="details-comments-item">
         <p class="details-item-user">
-          {{ comment?.username }}
+          {{ comment?.user_name }}
         </p>
         <p class="details-item-text">{{ comment?.content }}</p>
 
-        <div class="details-item-buttons" *ngIf="comment._ownerId == userId">
-          <mat-icon class="details-item-icon" (click)="editComment(comment._id)"
+        <div class="details-item-buttons" *ngIf="comment.user_id == userId">
+          <mat-icon class="details-item-icon" (click)="editComment(comment.id)"
             >edit</mat-icon
           >
           <mat-icon
             class="details-item-icon"
-            (click)="deleteComment(comment._id)"
+            (click)="deleteComment(comment.id)"
             >delete</mat-icon
           >
         </div>
