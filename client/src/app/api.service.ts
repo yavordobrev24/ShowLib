@@ -20,8 +20,6 @@ import Show from 'src/types/show';
 export class ApiService {
   searchValue: string | undefined;
   constructor(private http: HttpClient, private userService: UserService) {}
-  getAllShows() {
-    return this.http.get('/api/data/shows');
   }
   getMoviesOrTVShows(type: string) {
     return this.getAllShows().pipe(
