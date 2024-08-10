@@ -27,4 +27,27 @@ export class FavouritesComponent implements OnInit {
       selectedType: new FormControl(this.selectedType),
     });
   }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      const type = params['selectedType'] as 'movies' | 'tv-shows';
+      if (type === 'movies' || type === 'tv-shows') {
+        this.selectedType = type;
+        this.favouritesForm.patchValue({ selectedType: type });
+      } else {
+        this.router.navigate(['/favourites'], {
+          queryParams: { selectedType: 'movies' },
+        });
+      }
+    });
+    this.favouritesForm.get('selectedType')?.valueChanges.subscribe((type) => {
+      this.selectedType = type;
+      this.router.navigate(['/favourites'], {
+        queryParams: { selectedType: type },
+      });
+      this.loadFavourites(type);
+    });
+
+    this.loadFavourites(this.selectedType);
+  }
 }
