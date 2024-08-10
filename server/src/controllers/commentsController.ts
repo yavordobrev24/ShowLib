@@ -42,3 +42,14 @@ export const editComment = async (req: Request, res: Response) => {
     res.status(500).send('Internal Server Error')
   }
 }
+export const deleteComment = async (req: Request, res: Response) => {
+  const { id } = req.params
+  try {
+    const results = await commentRepository.delete(Number(id))
+    console.log('Server deleteComment results ', results)
+    res.json(results)
+  } catch (error) {
+    console.error('Error fetching trending movies:', error)
+    res.status(500).send('Internal Server Error')
+  }
+}
