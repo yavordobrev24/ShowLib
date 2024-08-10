@@ -3,11 +3,18 @@
   <form class="auth-form" #loginForm="ngForm" (submit)="login(loginForm)">
     <mat-form-field class="auth-field">
       <mat-label>Email</mat-label>
-      <input matInput name="email" ngModel required email />
+      <input matInput name="email" autocomplete="off" ngModel required email />
     </mat-form-field>
     <mat-form-field class="auth-field">
       <mat-label>Password</mat-label>
-      <input matInput name="password" type="password" ngModel required />
+      <input
+        matInput
+        name="password"
+        autocomplete="off"
+        type="password"
+        ngModel
+        required
+      />
     </mat-form-field>
 
     <button mat-button class="auth-button">Submit</button>
