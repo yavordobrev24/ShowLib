@@ -21,14 +21,17 @@ const routes: Routes = [
     path: 'discover',
     component: DiscoverComponent,
   },
-  { path: 'search', redirectTo: 'search' },
-  {
-    path: 'search/:searchValue',
-    component: SearchComponent,
-  },
 
   {
-    path: 'details/:id',
+    path: 'search',
+    component: SearchComponent,
+  },
+  {
+    path: 'tv-shows/:id/details',
+    component: DetailsComponent,
+  },
+  {
+    path: 'movies/:id/details',
     component: DetailsComponent,
   },
 
