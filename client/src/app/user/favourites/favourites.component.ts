@@ -50,4 +50,17 @@ export class FavouritesComponent implements OnInit {
 
     this.loadFavourites(this.selectedType);
   }
+
+  private loadFavourites(type: 'movies' | 'tv-shows'): void {
+    this.apiService
+      .getUserFavourites(type, this.userService.user?.id as number)
+      .subscribe(
+        (response: any) => {
+          this.favourites = response;
+        },
+        (error) => {
+          console.error(`Error fetching ${type} favourites:`, error);
+        }
+      );
+  }
 }
