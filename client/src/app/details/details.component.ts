@@ -82,6 +82,18 @@ export class DetailsComponent implements OnInit {
 
     this.isFavourite = true;
   }
+  deleteFavourite() {
+    const favourite = {
+      user_id: this.userId,
+      media_type: this.type,
+      media_id: this.showId,
+    };
+
+    this.apiService.deleteFavourite(favourite).subscribe((x: any) => {
+      console.log(x);
+    });
+    this.isFavourite = false;
+  }
   addComment() {
     if (this.commentForm.invalid) {
       return;
