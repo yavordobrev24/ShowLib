@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import NodeCache from 'node-cache'
 
-const cache = new NodeCache({ checkperiod: 60 * 60 * 24, maxKeys: 100 })
+const cache = new NodeCache({ checkperiod: 60 * 60 * 24 })
 
 const cacheMiddleware = (req: Request, res: Response, next: NextFunction) => {
   if (req.method !== 'GET') {
