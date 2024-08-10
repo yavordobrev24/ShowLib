@@ -49,6 +49,17 @@ export class ApiService {
       })
     );
   }
+  getShowComments(
+    type: 'movies' | 'tv-shows',
+    id: number
+  ): Observable<Comment[]> {
+
+
+    return this.http.get<Comment[]>(`/api/${type}/${id}/comments`).pipe(
+      catchError((error) => {
+        return throwError(() => new Error('Error fetching comments by id'));
+      })
+    );
   }
   }
   }
