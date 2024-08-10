@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Show } from 'src/types/show';
+
+import Show from 'src/types/show';
 
 @Component({
   selector: 'app-popular',
