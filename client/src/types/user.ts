@@ -1,6 +1,6 @@
-export type User = {
-  accessToken: string;
+type User = {
+  id: number;
   email: string;
   username: string;
-  _id: string;
 };
+export default User;
