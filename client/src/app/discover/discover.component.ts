@@ -13,13 +13,22 @@ import { PaginatorIntl } from '../paginatorIntl.service';
   providers: [{ provide: MatPaginatorIntl, useClass: PaginatorIntl }],
 })
 export class DiscoverComponent implements OnInit {
-  discoverForm = new FormGroup({
-    selectedType: new FormControl('both'),
-  });
-  selectedType: any = '';
-  shows!: Show[];
+  discoverForm: FormGroup;
+  selectedType!: 'movies' | 'tv-shows';
+  shows: Show[] = [];
+  baseImageUrl: string = 'https://image.tmdb.org/t/p/w500/';
+  pages!: number;
+  currentPage!: number;
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.discoverForm = new FormGroup({
+      selectedType: new FormControl(this.selectedType),
+    });
+  }
 
   ngOnInit(): void {
     this.discoverForm
