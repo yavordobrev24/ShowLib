@@ -41,6 +41,13 @@ export class ApiService {
       })
     );
   }
+
+  getShow(type: 'movies' | 'tv-shows', id: number): Observable<Show> {
+    return this.http.get<Show>(`/api/${type}/${id}`).pipe(
+      catchError((error) => {
+        return throwError(() => new Error('Error fetching data by id'));
+      })
+    );
   }
   }
   }
