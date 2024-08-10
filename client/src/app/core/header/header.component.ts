@@ -24,6 +24,12 @@ export class HeaderComponent {
     });
   }
   onSearch(searchValue: string) {
-    this.router.navigate(['/search/', searchValue]);
+    this.router.navigate(['/search'], {
+      queryParams: {
+        selectedType: 'movies',
+        query: searchValue,
+        page: 1,
+      },
+    });
   }
 }
