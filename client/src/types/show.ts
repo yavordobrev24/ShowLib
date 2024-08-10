@@ -1,10 +1,22 @@
-export type Show = {
-  _ownerId: string;
-  title: string;
-  type: string;
-  video: string;
-  description: string;
-  img: string;
-  _createdOn: number;
-  _id: string;
+type Show = {
+  id: number;
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  original_language: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  vote_average: number;
+  vote_count: number;
+  type: 'movie' | 'tv-show';
+  original_title?: string;
+  release_date?: string;
+  title?: string;
+  video?: boolean;
+  origin_country?: string[];
+  original_name?: string;
+  first_air_date?: string;
+  name?: string;
 };
+export default Show;
