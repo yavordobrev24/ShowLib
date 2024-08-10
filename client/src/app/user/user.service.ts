@@ -30,8 +30,6 @@ export class UserService {
   get isLogged(): boolean {
     return !!this.user;
   }
-  register(username: string, email: string, password: string) {
-    return this.http.post('/api/users/register', { username, email, password });
 
   login(email: string, password: string): Observable<User> {
     return this.http.post<User>('/api/auth/login', { email, password }).pipe(
@@ -45,6 +43,24 @@ export class UserService {
       })
     );
   }
+
+  register(
+    username: string,
+    email: string,
+    password: string
+  ): Observable<User> {
+    return this.http
+      .post<User>('/api/auth/register', { username, email, password })
+      .pipe(
+        tap((user) => {
+          this.user = user;
+          localStorage.setItem(this.USER_KEY, JSON.stringify(user));
+          this.router.navigate(['/home']);
+        }),
+        catchError((error) => {
+          throw error;
+        })
+      );
   }
   logout() {
     this.user = undefined;
