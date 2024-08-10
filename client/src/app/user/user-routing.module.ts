@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { LibraryComponent } from './library/library.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 import { LoggedActivate } from '../guards/logged.guard';
 import { NotLoggedActivate } from '../guards/notlogged.guard';
 
@@ -18,8 +18,8 @@ const routes: Routes = [
     canActivate: [NotLoggedActivate],
   },
   {
-    path: 'library',
-    component: LibraryComponent,
+    path: 'favourites',
+    component: FavouritesComponent,
     canActivate: [LoggedActivate],
   },
 ];
