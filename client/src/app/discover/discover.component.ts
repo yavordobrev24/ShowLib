@@ -1,12 +1,16 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from '../api.service';
-import { Show } from 'src/types/show';
+import Show from 'src/types/show';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { PaginatorIntl } from '../paginatorIntl.service';
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
   styleUrls: ['./discover.component.css'],
+  providers: [{ provide: MatPaginatorIntl, useClass: PaginatorIntl }],
 })
 export class DiscoverComponent implements OnInit {
   discoverForm = new FormGroup({
