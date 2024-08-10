@@ -1,0 +1,31 @@
+<div class="favourites">
+  <div class="favourites-header">
+    <p class="title">Favourites</p>
+    <form [formGroup]="favouritesForm">
+      <mat-form-field>
+        <mat-label>Choose type</mat-label>
+        <mat-select formControlName="selectedType">
+          <mat-option value="movies">Movies</mat-option>
+          <mat-option value="tv-shows">TV Shows</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <ul class="card-list">
+    <li
+      class="card-item"
+      *ngFor="let favourite of favourites"
+      [routerLink]="[
+        '/' + selectedType + '/' + favourite.media_id + '/details'
+      ]"
+    >
+      <img
+        class="card-item-img"
+        [src]="baseImageUrl + favourite.media_poster"
+        alt="{{ favourite.media_title }}"
+      />
+      <p class="card-item-text">{{ favourite.media_title }}</p>
+    </li>
+  </ul>
+  <p class="none" *ngIf="favourites?.length == 0">There are no shows.</p>
+</div>
