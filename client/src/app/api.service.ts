@@ -41,12 +41,10 @@ export class ApiService {
       },
     });
   }
-  editComment(data: any) {
-    return this.http.put(`/api/data/comments/${data._id}`, data, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
+  editComment(comment: any) {
+    return this.http.put(`/api/comments/${comment.id}`, {
+      ...comment,
+      media_id: Number(comment.media_id),
     });
   }
 }
