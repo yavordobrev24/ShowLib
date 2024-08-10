@@ -62,11 +62,16 @@ export class UserService {
         })
       );
   }
-  logout() {
+
+  logout(): Observable<void> {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
-    localStorage.removeItem(this.LIB_KEY);
     this.router.navigate(['/login']);
-    return this.http.get('/api/users/logout');
+    return this.http.post<void>('/api/auth/logout', {}).pipe(
+      tap(() => console.log('Logout request sent')),
+      catchError((error: HttpErrorResponse) => {
+        return EMPTY;
+      })
+    );
   }
 }
