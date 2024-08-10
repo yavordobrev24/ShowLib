@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
-import { Library } from 'src/types/library';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +10,7 @@ import { Library } from 'src/types/library';
 })
 export class LoginComponent {
   error: any;
-  constructor(
-    private userService: UserService,
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  constructor(private userService: UserService, private router: Router) {}
   login(form: NgForm) {
     if (form.invalid) {
       this.error = 'Email and password required!';
@@ -28,14 +22,9 @@ export class LoginComponent {
       (x: any) => {
         this.userService.user = x;
         localStorage.setItem('user', JSON.stringify(x));
-        this.apiService.getAllLibraries().subscribe((p: any) => {
-          const userLibrary = p.find((y: Library) => y._ownerId == x._id);
-
-          localStorage.setItem('library', JSON.stringify(userLibrary));
-        });
         this.router.navigate(['/home']);
       },
-      (e) => {
+      (error) => {
         this.error = "Login or password don't match!";
         return;
       }
