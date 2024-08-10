@@ -16,9 +16,17 @@ export class PopularComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getMoviesOrTVShows(this.type).subscribe((data: Show[]) => {
-      this.shows = data.slice(0, 6);
-      console.log(data);
-    });
+    this.apiService.getPopularShows(this.type).subscribe(
+      (data: any) => {
+        if (Array.isArray(data.results)) {
+          this.shows = data.results.slice(0, 5);
+        } else {
+          throw new Error('Unexpected data format:', data);
+        }
+      },
+      (error) => {
+        console.error('Error fetching data:', error);
+      }
+    );
   }
 }
