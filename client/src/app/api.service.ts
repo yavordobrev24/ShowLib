@@ -28,17 +28,6 @@ export class ApiService {
   }
   }
   }
-  saveToUserLibrary(lib: Library) {
-    const data = {
-      savedShows: lib.savedShows,
-      _ownerId: this.userService.user!._id,
-    };
-    return this.http.put(`/api/data/libraries/${lib._id}`, data, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
   }
   removeFromUserLibrary(lib: Library) {
     const data = {
