@@ -31,34 +31,33 @@ export class DiscoverComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.discoverForm
-      .get('selectedType')
-      ?.valueChanges.subscribe((selectedType) => {
-        this.selectedType = selectedType;
-        console.log('Changed value:', this.selectedType);
-
-        if (this.selectedType == 'movie' || this.selectedType == 'tvShow') {
-          this.apiService
-            .getMoviesOrTVShows(this.selectedType)
-            .subscribe((shows: Show[]) => {
-              this.shows = shows;
-            });
-        } else {
-          this.apiService.getAllShows().subscribe((shows: any) => {
-            this.shows = shows;
-          });
-        }
-      });
-    if (this.selectedType == 'movie' || this.selectedType == 'tvShow') {
-      this.apiService
-        .getMoviesOrTVShows(this.selectedType)
-        .subscribe((shows: any) => {
-          this.shows = shows;
+    this.route.queryParams.subscribe((params) => {
+      const type = params['selectedType'] as 'movies' | 'tv-shows';
+      const page = params['page'];
+      if ((type === 'movies' || type === 'tv-shows') && page > 0) {
+        this.selectedType = type;
+        this.currentPage = page;
+        this.discoverForm.patchValue({ selectedType: type });
+      } else {
+        this.router.navigate(['/discover'], {
+          queryParams: {
+            selectedType: 'movies',
+            page: 1,
+          },
         });
-    } else {
-      this.apiService.getAllShows().subscribe((shows: any) => {
-        this.shows = shows;
+      }
+    });
+    this.discoverForm.get('selectedType')?.valueChanges.subscribe((type) => {
+      this.selectedType = type;
+      this.router.navigate(['/discover'], {
+        queryParams: {
+          selectedType: type,
+          page: this.currentPage,
+        },
       });
-    }
+      this.loadShows(type, this.currentPage);
+    });
+    this.loadShows(this.selectedType, this.currentPage);
+  }
   }
 }
