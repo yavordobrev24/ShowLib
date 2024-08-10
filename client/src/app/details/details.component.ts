@@ -146,10 +146,10 @@ export class DetailsComponent implements OnInit {
     this.commentAdded = false;
   }
 
-  deleteComment(id: string) {
-    this.comments = this.comments.filter((x: Comment) => x._id != id);
+  deleteComment(id: number) {
+    this.comments = this.comments.filter((x: Comment) => x.id != id);
     this.apiService.deleteComment(id).subscribe((x) => console.log(x));
-    this.commentForm.patchValue({ comment: '' });
+    this.commentForm.patchValue({ content: '' });
     this.commentAdded = false;
   }
   unsaveShow() {
