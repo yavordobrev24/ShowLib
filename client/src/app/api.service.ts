@@ -24,8 +24,6 @@ export class ApiService {
       })
     );
   }
-  getShowById(id: string | null) {
-    return this.http.get('/api/data/shows/' + id);
   }
   getComments() {
     return this.http.get('/api/data/comments');
