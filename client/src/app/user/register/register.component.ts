@@ -3,8 +3,6 @@ import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
-import { ApiService } from 'src/app/api.service';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,11 +10,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class RegisterComponent {
   error: any;
-  constructor(
-    private userService: UserService,
-    private router: Router,
-    private apiService: ApiService
-  ) {}
+  constructor(private userService: UserService, private router: Router) {}
   register(form: NgForm) {
     if (form.invalid) {
       this.error = 'All fields required!';
@@ -32,13 +26,9 @@ export class RegisterComponent {
       (x: any) => {
         this.userService.user = x;
         localStorage.setItem('user', JSON.stringify(x));
-        this.apiService.createLibrary().subscribe((p: any) => {
-          const userLibrary = p;
-          localStorage.setItem('library', JSON.stringify(userLibrary));
-        });
         this.router.navigate(['/home']);
       },
-      (e) => {
+      (error) => {
         this.error = 'Account with this email already exists!';
         return;
       }

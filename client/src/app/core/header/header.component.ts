@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  
 })
 export class HeaderComponent {
-  searchValue: string | undefined;
-  constructor(
-    private userService: UserService,
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  constructor(private userService: UserService, private router: Router) {}
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
+
   logout() {
-    this.userService.logout();
+    this.userService.logout().subscribe({
+      next: () => {
+        console.log('Logout successful');
+      },
+      error: (error) => {
+        console.error('Logout failed', error);
+      },
+    });
   }
   onSearch(searchValue: string) {
-    this.router.navigate(['/search/', searchValue]);
+    this.router.navigate(['/search'], {
+      queryParams: {
+        selectedType: 'movies',
+        query: searchValue,
+        page: 1,
+      },
+    });
   }
 }

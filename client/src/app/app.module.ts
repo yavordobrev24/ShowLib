@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserModule } from './user/user.module';
 import { DetailsComponent } from './details/details.component';
@@ -43,13 +44,14 @@ import { PopularComponent } from './popular/popular.component';
     CoreModule,
     BrowserAnimationsModule,
     MatIconModule,
-    UserModule,
+
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
     MatTooltipModule,
     FormsModule,
     MatChipsModule,
+    MatPaginatorModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],

@@ -1,8 +1,9 @@
-export type Comment = {
-  _ownerId: string;
-  username: string;
+type Comment = {
+  id: number;
   content: string;
-  showId: string;
-  _createdOn: number;
-  _id: string;
+  user_id: number;
+  user_name: string;
+  media_type: string;
+  media_id: number;
 };
+export default Comment;

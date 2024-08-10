@@ -26,7 +26,7 @@
             <a routerLink="/register">Register</a>
           </button>
           <button mat-menu-item *ngIf="isLoggedIn">
-            <a routerLink="/library">Library</a>
+            <a routerLink="/favourites">Favourites</a>
           </button>
           <button mat-menu-item *ngIf="isLoggedIn">
             <a (click)="logout()">Logout</a>
@@ -62,7 +62,7 @@
       </button>
       <button mat-menu-item *ngIf="isLoggedIn">
         <li class="dropdown-item">
-          <a routerLink="/library">Library</a>
+          <a routerLink="/favourites">Favourites</a>
         </li>
       </button>
       <button mat-menu-item *ngIf="isLoggedIn">
