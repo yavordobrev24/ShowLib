@@ -33,41 +33,40 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('new init');
+    this.type = this.route.snapshot.url[0].path as 'movies' | 'tv-shows';
     this.isLogged = this.userService.isLogged;
-
     this.route.params.subscribe((params) => {
       this.showId = params['id'];
     });
     if (this.isLogged) {
-      this.userId = this.userService.user?._id;
+      this.userId = this.userService.user?.id;
     }
-    this.apiService
-      .getShowById(this.showId)
-      .subscribe((data: any) => (this.show = data));
 
-    this.apiService.getComments().subscribe((x) => {
-      this.comments = Object.values(x).filter((y) => y.showId === this.showId);
-      if (
-        this.comments?.find(
-          (x: any) => x._ownerId == this.userService.user?._id
-        )
-      ) {
-        this.commentAdded = true;
+    this.apiService.getShow(this.type, this.showId).subscribe((data: any) => {
+      this.show = data;
+    });
+    const favourite = {
+      user_id: this.userId,
+      media_type: this.type,
+      media_id: this.showId,
+    };
+    this.apiService.getFavourite(favourite).subscribe((data: any) => {
+      if (!data) {
+        this.isFavourite = false;
       } else {
-        this.commentAdded = false;
+        this.isFavourite = true;
       }
     });
-    const lsLib = localStorage.getItem('library');
-    const library = lsLib !== null ? JSON.parse(lsLib) : '';
-
-    if (library.savedShows?.find((x: any) => this.showId == x._id)) {
-      console.log('Has saved');
-
-      this.hasSaved = true;
-    } else {
-      this.hasSaved = false;
-    }
+    this.apiService
+      .getShowComments(this.type, this.showId)
+      .subscribe((x: any) => {
+        this.comments = x;
+        if (this.comments?.find((x: any) => x.user_id == this.userId)) {
+          this.commentAdded = true;
+        } else {
+          this.commentAdded = false;
+        }
+      });
   }
 
   addComment() {
