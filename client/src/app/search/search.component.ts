@@ -38,22 +38,37 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.searchValue = params['searchValue'];
-      if (this.searchValue == '') {
-        this.apiService.getAllShows().subscribe((shows: any) => {
-          this.shows = shows;
-        });
+    this.route.queryParams.subscribe((params) => {
+      const type = params['selectedType'] as 'movies' | 'tv-shows';
+      const query = params['query'];
+      const page = params['page'];
+      if ((type === 'movies' || type === 'tv-shows') && page > 0) {
+        this.selectedType = type;
+        this.searchValue = query;
+        this.currentPage = page;
+        this.searchForm.patchValue({ selectedType: type });
       } else {
-        this.apiService.getAllShows().subscribe((shows) => {
-          this.shows = Object.values(shows).filter((show) =>
-            show.title
-              .toLocaleLowerCase()
-              .includes(this.searchValue?.toLocaleLowerCase())
-          );
+        this.router.navigate(['/search'], {
+          queryParams: {
+            selectedType: 'movies',
+            query: this.searchValue,
+            page: 1,
+          },
         });
       }
     });
-    console.log('init');
+    this.searchForm.get('selectedType')?.valueChanges.subscribe((type) => {
+      this.selectedType = type;
+      this.router.navigate(['/search'], {
+        queryParams: {
+          selectedType: type,
+          query: this.searchValue,
+          page: this.currentPage,
+        },
+      });
+      this.loadShows(type, this.currentPage);
+    });
+    this.loadShows(this.selectedType, this.currentPage);
+  }
   }
 }
