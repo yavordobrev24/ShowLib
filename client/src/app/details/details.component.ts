@@ -1,10 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user/user.service';
-import { Show } from 'src/types/show';
-import { Comment } from 'src/types/comment';
+import Comment from 'src/types/comment';
+import Show from 'src/types/show';
 
 @Component({
   selector: 'app-details',
