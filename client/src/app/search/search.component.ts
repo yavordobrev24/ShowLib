@@ -19,9 +19,24 @@ import { PaginatorIntl } from '../paginatorIntl.service';
   ],
 })
 export class SearchComponent implements OnInit {
-  searchValue: string | undefined;
-  shows: Show[] | undefined;
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  searchForm: FormGroup;
+  selectedType!: 'movies' | 'tv-shows';
+  shows: Show[] = [];
+  baseImageUrl: string = 'https://image.tmdb.org/t/p/w500/';
+  searchValue: string = '';
+  pages!: number;
+  currentPage!: number;
+
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.searchForm = new FormGroup({
+      selectedType: new FormControl(this.selectedType),
+    });
+  }
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.searchValue = params['searchValue'];
