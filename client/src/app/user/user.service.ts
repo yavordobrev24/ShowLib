@@ -14,13 +14,10 @@ import User from 'src/types/user';
   providedIn: 'root',
 })
 export class UserService {
-  library: Library | undefined;
+  favourites!: Favourite[];
   user: User | undefined;
   USER_KEY = 'user';
-  LIB_KEY = 'library';
-  get isLogged(): boolean {
-    return !!this.user;
-  }
+
   constructor(private http: HttpClient, private router: Router) {
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || '';
