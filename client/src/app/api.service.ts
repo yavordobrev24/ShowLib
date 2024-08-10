@@ -29,18 +29,6 @@ export class ApiService {
   }
   }
   }
-  removeFromUserLibrary(lib: Library) {
-    const data = {
-      savedShows: lib.savedShows,
-      _ownerId: this.userService.user!._id,
-    };
-
-    return this.http.put(`/api/data/libraries/${lib._id}`, data, {
-      headers: {
-        'X-Authorization': this.userService.user!.accessToken,
-        'Content-Type': 'application/json',
-      },
-    });
   }
   addComment(id: string | null, comment: string) {
     console.log('API COMMENT ', comment);
