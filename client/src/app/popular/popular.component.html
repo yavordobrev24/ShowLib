@@ -1,7 +1,12 @@
 <div class="popular">
   <div class="popular-header">
-    <p class="title">Popular - Movie</p>
-    <a routerLink="/discover" class="see-all-button"
+    <p class="title">
+      Popular - {{ type == "movies" ? "Movies" : "TV Shows" }}
+    </p>
+    <a
+      routerLink="/discover"
+      [queryParams]="{ selectedType: type, page: 1 }"
+      class="see-all-button"
       >See All <mat-icon>arrow_forward_ios</mat-icon></a
     >
   </div>
@@ -10,10 +15,14 @@
     <li
       class="card-item"
       *ngFor="let show of shows"
-      [routerLink]="['/details', show._id]"
+      [routerLink]="['/' + type + '/' + show.id + '/details']"
     >
-      <img class="card-item-img" [src]="show.img" alt="{{ show.title }}" />
-      <p class="card-item-text">{{ show.title }}</p>
+      <img
+        class="card-item-img"
+        [src]="baseImageUrl + show.poster_path"
+        alt="{{ show.title || show.name }}"
+      />
+      <p class="card-item-text">{{ show.title || show.name }}</p>
     </li>
   </ul>
 </div>
