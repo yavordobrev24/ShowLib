@@ -1,12 +1,22 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { Show } from 'src/types/show';
+
+import Show from 'src/types/show';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { PaginatorIntl } from '../paginatorIntl.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: PaginatorIntl,
+    },
+  ],
 })
 export class SearchComponent implements OnInit {
   searchValue: string | undefined;
