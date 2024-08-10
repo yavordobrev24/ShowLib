@@ -28,6 +28,9 @@ export class UserService {
   }
   login(email: string, password: string) {
     return this.http.post('/api/users/login', { email, password });
+
+  get isLogged(): boolean {
+    return !!this.user;
   }
   register(username: string, email: string, password: string) {
     return this.http.post('/api/users/register', { username, email, password });
